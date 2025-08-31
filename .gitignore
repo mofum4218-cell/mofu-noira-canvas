@@ -1,0 +1,12 @@
+/node_modules
+/.next/
+/build
+/out
+/.vercel
+.env*
+dist
+.vscode
+.idea
+.DS_Store
+*.tsbuildinfo
+*.log
