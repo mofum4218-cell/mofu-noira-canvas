@@ -1,0 +1,9 @@
+{
+  "id": "hero",
+  "type": "hero",
+  "theme": "forest",
+  "title": "Welcome to Prism",
+  "subtitle": "This is your new Hero section!",
+  "bg": "primary"
+}
+
