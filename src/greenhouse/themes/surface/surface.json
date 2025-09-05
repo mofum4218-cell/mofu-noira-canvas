@@ -1,0 +1,21 @@
+{
+  "forest": {
+    "primary": "#4CAF50",
+    "secondary": "#81C784",
+    "hover": "#66BB6A",
+    "accent": "#2E7D32"
+  },
+  "ocean": {
+    "primary": "#0288D1",
+    "secondary": "#4FC3F7",
+    "hover": "#03A9F4",
+    "accent": "#01579B"
+  },
+  "dark": {
+    "primary": "#212121",
+    "secondary": "#424242",
+    "hover": "#616161",
+    "accent": "#FF5722"
+  }
+}
+

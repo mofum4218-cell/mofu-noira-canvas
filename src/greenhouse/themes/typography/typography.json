@@ -1,0 +1,49 @@
+{
+  "fontFamily": {
+    "sans": "'Inter', sans-serif",
+    "noto": "'Noto Sans JP', sans-serif",
+    "roboto": "'Roboto', sans-serif",
+    "openSans": "'Open Sans', sans-serif",
+    "system": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+  },
+  "fontSize": {
+    "xs": "0.75rem",
+    "sm": "0.875rem",
+    "base": "1rem",
+    "lg": "1.125rem",
+    "xl": "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.875rem",
+    "4xl": "2.25rem"
+  },
+  "fontWeight": {
+    "light": "300",
+    "normal": "400",
+    "medium": "500",
+    "semibold": "600",
+    "bold": "700"
+  },
+  "lineHeight": {
+    "normal": "1.5",
+    "relaxed": "1.625",
+    "loose": "2"
+  },
+  "letterSpacing": {
+    "normal": "0",
+    "wide": "0.05em",
+    "wider": "0.1em"
+  },
+  "textDecoration": {
+    "none": "none",
+    "underline": "underline",
+    "lineThrough": "line-through"
+  },
+  "responsiveFontSize": {
+  "xs": { "mobile": "12px", "desktop": "14px" },
+  "sm": { "mobile": "14px", "desktop": "16px" },
+  "base": { "mobile": "16px", "desktop": "18px" },
+  "lg": { "mobile": "18px", "desktop": "20px" }
+}
+
+ }
+

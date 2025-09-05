@@ -1,18 +1,23 @@
+"use client";
+
+import React from "react";
+import dynamic from "next/dynamic";
 import { getSection } from "@/lib/getSection";
-import { renderSection } from "@/crops/renderers";
-import { ThemeProvider } from "styled-components";
-import { getTheme } from "@/greenhouse/themes/colors";
-import { GlobalThemeStyle } from "@/greenhouse/themes/GlobalThemeStyle";
+//import { Hero } from "@/crops/sections/hero";
+
+// Heroを動的import（SSRオフ）
+const Hero = dynamic(() => import("@/crops/sections/hero"), { ssr: false });
 
 export default function Home() {
   const section = getSection("hero");
-  const theme = getTheme((section?.theme || "forest") as "forest" | "ocean" | "dark");
+
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalThemeStyle />
-      {section && renderSection(section)}
-    </ThemeProvider>
+    <>
+      <Hero
+        title={section?.title || "タイトル"}
+        subtitle={section?.subtitle || "サブタイトル"}
+      />
+    </>
   );
 }
-
 
