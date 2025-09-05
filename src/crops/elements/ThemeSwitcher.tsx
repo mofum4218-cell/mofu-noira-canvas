@@ -1,9 +1,11 @@
+// src/crops/elements/ThemeSwitcher.tsx
 'use client';
 
 import React, { useContext } from "react";
 import { ThemeContext } from "@/greenhouse/themes/ThemeContext";
 import { themeList } from "@/greenhouse/themes/themeList";
 import styled from "styled-components";
+import { log } from "@/utils/logger"; // ← 追加！
 
 const SwitcherWrapper = styled.div`
   display: flex;
@@ -26,16 +28,15 @@ const ThemeButton = styled.button<{ $active: boolean }>`
 `;
 
 export const ThemeSwitcher: React.FC = () => {
-  console.log("🍑ThemeSwitcher mounted");
+  log.info("🍑 ThemeSwitcher mounted");
 
-  // 🌱 Context を取得し、undefined をチェック
   const themeContext = useContext(ThemeContext);
   if (!themeContext) {
     throw new Error("ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider.");
   }
 
   const { currentTheme, setTheme } = themeContext;
-  console.log("🐰current theme from context:", currentTheme);
+  log.info("🐰 current theme from context:", currentTheme);
 
   return (
     <SwitcherWrapper>
@@ -44,7 +45,7 @@ export const ThemeSwitcher: React.FC = () => {
           key={name}
           $active={name === currentTheme}
           onClick={() => {
-            console.log("🎯 Theme button clicked:", name);
+            log.info("🎯 Theme button clicked:", name);
             setTheme(name);
           }}
         >

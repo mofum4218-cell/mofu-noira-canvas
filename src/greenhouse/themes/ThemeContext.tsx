@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext } from "react";
 import { ThemeName } from "./types";
+import { log } from "@/utils/logger"; // ← ロガー追加
 
 type ThemeContextType = {
   currentTheme: ThemeName;
@@ -12,7 +13,7 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(undefine
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-    console.log("🧠 useTheme context:", context); // ← ここ追加！
+  log.info("🧠 useTheme context:", context); // ← ログを info に
   if (!context) throw new Error("useTheme must be used within ThemeProvider");
   return context;
 };

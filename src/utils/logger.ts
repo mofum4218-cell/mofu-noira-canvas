@@ -1,17 +1,19 @@
 // src/utils/logger.ts
 
+type LogArg = string | number | boolean | object | null | undefined;
+
 export const log = {
-  info: (...args: unknown[]) => {
+  info: (...args: LogArg[]) => {
     if (process.env.NODE_ENV === "development") {
       console.info("[INFO]", ...args);
     }
   },
-  warn: (...args: unknown[]) => {
+  warn: (...args: LogArg[]) => {
     if (process.env.NODE_ENV === "development") {
       console.warn("[WARN]", ...args);
     }
   },
-  error: (...args: unknown[]) => {
+  error: (...args: LogArg[]) => {
     if (process.env.NODE_ENV === "development") {
       console.error("[ERROR]", ...args);
     }
