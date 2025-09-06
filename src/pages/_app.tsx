@@ -1,4 +1,3 @@
-// src/pages/_app.tsx
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
@@ -9,6 +8,7 @@ import { getTheme } from "@/greenhouse/themes/colors";
 import { ThemeName } from "@/greenhouse/themes/types";
 import { ThemeContext } from "@/greenhouse/themes/ThemeContext";
 import { log } from "@/utils/logger"; // ← ロガー追加！
+import { Navbar } from "@/crops/elements/Navbar"; // ← ナビバー追加！
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -42,6 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider key={themeName} theme={theme}>
       <ThemeContext.Provider value={{ currentTheme: themeName, setTheme: handleSetTheme }}>
         <GlobalThemeStyle />
+        <Navbar />
         <Component key={themeName} {...pageProps} />
       </ThemeContext.Provider>
     </ThemeProvider>
