@@ -1,35 +1,69 @@
 {
-    "forest": {
-        "primary": "#4CAF50",
-        "secondary": "#81C784",
-        "bg": "#E8F5E9",
-        "text": "#1B5E20",
-        "hover": "#66B6A",
-        "accent": "#2E7D32",
-        "radius": {
+  "forest": {
+    "primary": "#4CAF50",
+    "secondary": "#81C784",
+    "bg": "#E8F5E9",
+    "text": "#1B5E20",
+    "hover": "#66B6AA",
+    "accent": "#2E7D32",
+    "radius": {
       "md": "8px"
     }
-    },
-    "ocean": {
-        "primary": "#0288D1",
-        "secondary": "#4FC3F7",
-        "bg": "#E1F5FE",
-        "text": "#01579B",
-        "hover": "#03A9F4",
-        "accent": "#01579B",
-        "radius": {
+  },
+  "ocean": {
+    "primary": "#0288D1",
+    "secondary": "#4FC3F7",
+    "bg": "#E1F5FE",
+    "text": "#01579B",
+    "hover": "#03A9F4",
+    "accent": "#01579B",
+    "radius": {
       "md": "8px"
     }
-    },
-    "dark": {
-        "primary": "#212121",
-        "secondary": "#616161",
-        "bg": "#121212",
-        "text": "#FAFAFA",
-        "hover": "#616161",
-        "accent": "#FF5722",
-        "radius": {
+  },
+  "dark": {
+    "primary": "#212121",
+    "secondary": "#616161",
+    "bg": "#121212",
+    "text": "#FAFAFA",
+    "hover": "#616161",
+    "accent": "#FF5722",
+    "radius": {
       "md": "8px"
     }
+  },
+  "neonViolet": {
+    "primary": "#8373C7",
+    "secondary": "#39FF14",
+    "bg": "#121212",
+    "text": "#FFFFFF",
+    "accent": "#39FF14",
+    "hover": "#A29BFE",
+    "radius": {
+      "md": "8px"
     }
+  },
+  "burningRed": {
+    "primary": "#FF3830",
+    "secondary": "#FFD700",
+    "bg": "#121212",
+    "text": "#FFFFFF",
+    "accent": "#FF6F61",
+    "hover": "#FF5733",
+    "radius": {
+      "md": "8px"
+    }
+  },
+  "iceBlue": {
+    "primary": "#A4DFFF",
+    "secondary": "#D3D3D3",
+    "bg": "#FFFFFF",
+    "text": "#121212",
+    "accent": "#E0F7FA",
+    "hover": "#B2EBF2",
+    "radius": {
+      "md": "8px"
+    }
+  }
 }
+

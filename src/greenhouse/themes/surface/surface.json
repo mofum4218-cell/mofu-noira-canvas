@@ -16,6 +16,24 @@
     "secondary": "#424242",
     "hover": "#616161",
     "accent": "#FF5722"
+  },
+  "neonViolet": {
+      "primary": "#8373C7",
+      "secondary": "#39FF14",
+      "hover": "#A29BFE",
+      "accent": "#39FF14"
+  },
+  "burningRed": {
+      "primary": "#FF3830",
+      "secondary": "#FFD700",
+      "hover": "#FF5733",
+      "accent": "#FF6F61"
+  },
+  "iceBlue": {
+      "primary": "#A4DFFF",
+      "secondary": "D3D3D3",
+      "hover": "#B2EBF2",
+      "accent": "#E0F7FA"
   }
 }
 
