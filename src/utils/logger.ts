@@ -1,22 +1,17 @@
 // src/utils/logger.ts
+type ConsoleMethod = "log" | "warn" | "error";
 
-type LogArg = string | number | boolean | object | null | undefined;
+const toConsole = (method: ConsoleMethod) =>
+  (...args: unknown[]) => {
+    if (process.env.NODE_ENV === "development") {
+      // eslint-disable-next-line no-console
+      (console[method] as (...a: unknown[]) => void)(...args);
+    }
+  };
 
 export const log = {
-  info: (...args: LogArg[]) => {
-    if (process.env.NODE_ENV === "development") {
-      console.info("[INFO]", ...args);
-    }
-  },
-  warn: (...args: LogArg[]) => {
-    if (process.env.NODE_ENV === "development") {
-      console.warn("[WARN]", ...args);
-    }
-  },
-  error: (...args: LogArg[]) => {
-    if (process.env.NODE_ENV === "development") {
-      console.error("[ERROR]", ...args);
-    }
-  },
+  info: toConsole("log"),
+  warn: toConsole("warn"),
+  error: toConsole("error"),
 };
 

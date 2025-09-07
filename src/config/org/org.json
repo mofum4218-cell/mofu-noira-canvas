@@ -1,0 +1,36 @@
+{
+  "companyName": "CodeyNode Inc.",
+  "representative": "M. Nishimoto",
+  "address": "Tokyo, Japan",
+  "email": "contact@codeynode.com",
+  "established": "2025-04-01",
+  "capital": "1,000,000 JPY",
+  "qualification": "Licensed Pharmacist (JP)",
+  "logo": "/merge.png",
+
+  "siteUrl": "https://www.codeynodemlab.com", 
+  "favicon": "/favicon.ico",
+
+  "seo": {
+    "title": "CodeyNode Inc. | Digital Solutions from MergeLab",
+    "description": "CodeyNode Inc. delivers creative, scalable digital solutions powered by AI and crafted in the virtual innovation hub MergeLab.",
+    "keywords": ["CodeyNode", "MergeLab", "AI Solutions", "Fullstack Development", "Creative Tech"],
+    "author": "CodeyNode Inc.",
+    "themeColor": "#4CAF50"
+  },
+
+  "og": {
+    "type": "website",
+    "title": "MergeLab by CodeyNode",
+    "description": "Welcome to MergeLab – a virtual innovation space where technology meets imagination.",
+    "url": "https://www.codeynodemlab.com",
+    "image": "/ogp.png"
+  },
+
+  "copyright": "© CodeyNode Inc.",
+  "credit": {
+    "creator": "CodeyNode Dev Team",
+    "comment": "Crafted with care and technology"
+  }
+}
+
