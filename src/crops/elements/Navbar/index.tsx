@@ -4,7 +4,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "@/greenhouse/themes/ThemeContext";
+// ❌ currentTheme 未使用 → 削除
+// import { useTheme } from "@/greenhouse/themes/ThemeContext";
 import navConfigJson from "@/config/nav/nav.json";
 import { NavItem } from "./types";
 import {
@@ -20,7 +21,6 @@ import { MobileMenu } from "./MobileMenu";
 const navConfig = navConfigJson as NavItem[];
 
 export const Navbar: React.FC = () => {
-  const { currentTheme } = useTheme();
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
@@ -28,26 +28,28 @@ export const Navbar: React.FC = () => {
 
   return (
     <NavbarWrapper>
+      {/* ロゴ */}
       <Logo>
-        <Link href="/" passHref>
+        <Link href="/" aria-label="Home">
           <Image src="/merge.png" alt="Logo" width={120} height={40} priority />
         </Link>
       </Logo>
 
+      {/* ナビアイテム */}
       <NavItems>
         {navConfig.map((item, idx) =>
           item.type === "button" ? (
             <ContactButton key={idx}>{item.label}</ContactButton>
           ) : (
-            <Link key={idx} href={item.href} legacyBehavior>
-              <StyledNavLink>{item.label}</StyledNavLink>
-            </Link>
+            <StyledNavLink key={idx} href={item.href}>
+              {item.label}
+            </StyledNavLink>
           )
         )}
       </NavItems>
 
       {/* ハンバーガー（モバイル用） */}
-      <Hamburger onClick={handleMenuToggle}>
+      <Hamburger onClick={handleMenuToggle} aria-label="Open menu">
         <Image src="/menu.svg" alt="menu" width={24} height={24} />
       </Hamburger>
 

@@ -1,6 +1,8 @@
+// src/crops/elements/Footer/index.tsx
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import styled from "styled-components";
 import org from "@/config/org/org.json";
 import MergeIcon from "@/crops/elements/MergeIcon";
@@ -27,11 +29,16 @@ const CenterLogo = styled.a`
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
+`;
 
-  img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
+// Linkを直接スタイリング（legacyBehavior不要）
+const NavLink = styled(Link)`
+  color: ${({ theme }) => theme.text};
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
@@ -41,16 +48,6 @@ const TopRightNav = styled.div`
   right: 2rem;
   display: flex;
   gap: 1.25rem;
-
-  a {
-    color: ${({ theme }) => theme.text};
-    text-decoration: none;
-    font-weight: bold;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 const BottomRight = styled.div`
@@ -90,15 +87,23 @@ const Footer = () => {
       {/* 右上ナビゲーション */}
       <TopRightNav>
         {navItems.map((item, idx) => (
-          <Link key={idx} href={item.href} legacyBehavior>
-            <a>{item.label}</a>
-          </Link>
+          <NavLink key={idx} href={item.href}>
+            {item.label}
+          </NavLink>
         ))}
       </TopRightNav>
 
-      {/* 中央ロゴ＋社名 */}
+      {/* 中央ロゴ＋社名（外部遷移は <a> でOK） */}
       <CenterLogo href={org.siteUrl} target="_blank" rel="noopener noreferrer">
-        <img src="/merge.png" alt="Merge Logo" />
+        <Image
+          src="/merge.png"
+          alt="Merge Logo"
+          width={42}
+          height={42}
+          sizes="42px"
+          priority
+          style={{ width: 42, height: 42 }} // レイアウト崩れ防止
+        />
         CodeyNode .Inc
       </CenterLogo>
 

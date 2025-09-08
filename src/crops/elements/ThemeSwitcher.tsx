@@ -1,11 +1,10 @@
-// src/crops/elements/ThemeSwitcher.tsx
-'use client';
+"use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "@/greenhouse/themes/ThemeContext";
 import { themeList } from "@/greenhouse/themes/themeList";
 import styled from "styled-components";
-import { log } from "@/utils/logger"; // ← 追加！
+import { log } from "@/utils/logger";
 
 const SwitcherWrapper = styled.div`
   display: flex;
@@ -18,7 +17,8 @@ const ThemeButton = styled.button<{ $active: boolean }>`
   border: none;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.radius?.md ?? "8px"};
-  background-color: ${({ theme, $active }) => ($active ? theme.accent : theme.secondary)};
+  background-color: ${({ theme, $active }) =>
+    $active ? theme.accent : theme.secondary};
   color: ${({ theme }) => theme.text};
   transition: background-color 0.3s;
 
@@ -28,15 +28,26 @@ const ThemeButton = styled.button<{ $active: boolean }>`
 `;
 
 export const ThemeSwitcher: React.FC = () => {
-  log.info("🍑 ThemeSwitcher mounted");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    log.info("🍑 ThemeSwitcher mounted");
+  }, []);
 
   const themeContext = useContext(ThemeContext);
   if (!themeContext) {
-    throw new Error("ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider.");
+    throw new Error(
+      "ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider."
+    );
   }
 
   const { currentTheme, setTheme } = themeContext;
-  log.info("🐰 current theme from context:", currentTheme);
+
+  if (!mounted) {
+    // SSR / Hydrationずれ防止用
+    return null;
+  }
 
   return (
     <SwitcherWrapper>
