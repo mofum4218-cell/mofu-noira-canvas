@@ -1,3 +1,4 @@
+// greenhouse/themes/styled.d.ts
 import 'styled-components';
 
 declare module 'styled-components' {
@@ -8,6 +9,7 @@ declare module 'styled-components' {
     secondary: string;
     hover: string;
     accent: string;
+
     radius: {
       sm: string;
       md: string;
@@ -15,6 +17,7 @@ declare module 'styled-components' {
       xl: string;
       full: string;
     };
+
     spacing: {
       xs: string;
       sm: string;
@@ -22,6 +25,7 @@ declare module 'styled-components' {
       lg: string;
       xl: string;
     };
+
     typography: {
       fontFamily: {
         sans: string;
@@ -68,6 +72,15 @@ declare module 'styled-components' {
           desktop: string;
         };
       };
+    };
+
+    // ✅ breakpoints を追加！
+    breakpoints: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      '2xl': string;
     };
   }
 }

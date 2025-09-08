@@ -5,25 +5,17 @@ import { ThemeContext } from "@/greenhouse/themes/ThemeContext";
 import { themeList } from "@/greenhouse/themes/themeList";
 import styled from "styled-components";
 import { log } from "@/utils/logger";
+import Button from "@/crops/elements/Button"; // 共通ボタン
 
 const SwitcherWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 2rem;
-`;
+  justify-content: center;
 
-const ThemeButton = styled.button<{ $active: boolean }>`
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
-  border-radius: ${({ theme }) => theme.radius?.md ?? "8px"};
-  background-color: ${({ theme, $active }) =>
-    $active ? theme.accent : theme.secondary};
-  color: ${({ theme }) => theme.text};
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.hover};
+  @media (max-width: 768px) {
+    padding: 0 1rem;
   }
 `;
 
@@ -37,32 +29,33 @@ export const ThemeSwitcher: React.FC = () => {
 
   const themeContext = useContext(ThemeContext);
   if (!themeContext) {
-    throw new Error(
-      "ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider."
-    );
+    throw new Error("ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider.");
   }
 
   const { currentTheme, setTheme } = themeContext;
 
   if (!mounted) {
-    // SSR / Hydrationずれ防止用
-    return null;
+    return null; // SSR対策
   }
 
   return (
     <SwitcherWrapper>
-      {themeList.map(({ name, label }) => (
-        <ThemeButton
-          key={name}
-          $active={name === currentTheme}
-          onClick={() => {
-            log.info("🎯 Theme button clicked:", name);
-            setTheme(name);
-          }}
-        >
-          {label}
-        </ThemeButton>
-      ))}
+      {themeList.map(({ name, label }) => {
+        const isActive = name === currentTheme;
+
+        return (
+          <Button
+            key={name}
+            onClick={() => {
+              log.info("🎯 Theme button clicked:", name);
+              setTheme(name);
+            }}
+            variant={isActive ? "default" : "outline"}
+          >
+            {label}
+          </Button>
+        );
+      })}
     </SwitcherWrapper>
   );
 };

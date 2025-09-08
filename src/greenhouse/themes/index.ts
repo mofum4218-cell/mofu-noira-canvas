@@ -2,6 +2,7 @@ import { DefaultTheme } from "styled-components";
 import { radius } from "./radius";
 import { spacing } from "./spacing";
 import { typography } from "./typography";
+import { breakpoints } from "./breakpoints/breakpoints";
 
 export const theme: Record<string, DefaultTheme> = {
   forest: {
@@ -14,6 +15,7 @@ export const theme: Record<string, DefaultTheme> = {
     radius,
     spacing,
     typography,
+    breakpoints,
   },
   ocean: {
     bg: "#E1F5FE",
@@ -25,6 +27,7 @@ export const theme: Record<string, DefaultTheme> = {
     radius,
     spacing,
     typography,
+    breakpoints,
   },
   dark: {
     bg: "#121212",
@@ -36,6 +39,7 @@ export const theme: Record<string, DefaultTheme> = {
     radius,
     spacing,
     typography,
+    breakpoints,
   },
   neonViolet: {
      primary: "#8373C7",
@@ -47,6 +51,7 @@ export const theme: Record<string, DefaultTheme> = {
     radius,
     spacing,
     typography,
+    breakpoints,
   },
   burningRed: {
     primary: "#FF3830",
@@ -58,6 +63,7 @@ export const theme: Record<string, DefaultTheme> = {
     radius,
     spacing,
     typography,
+    breakpoints,
   },
   iceBlue: {
      primary: "#A4DFFF",
@@ -69,6 +75,7 @@ export const theme: Record<string, DefaultTheme> = {
     radius,
     spacing,
     typography,
+    breakpoints,
   }
 };
 
