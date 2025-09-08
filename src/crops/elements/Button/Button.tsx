@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { StyledButton, ImageButton } from "./Button.styles";
+import { StyledButton, ImageButton, StyledLinkButton } from "./Button.styles";
 import type { ButtonProps } from "./Button.types";
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,8 +16,10 @@ const Button: React.FC<ButtonProps> = ({
   href,
   size = "md",
   ariaLabel,
+  disabled = false,
+  block = false,
 }) => {
-  // 画像ボタン（variant === "image"）
+  // 🧊 画像ボタン（Image専用）
   if (variant === "image" && imageSrc) {
     return (
       <ImageButton onClick={onClick} aria-label={ariaLabel}>
@@ -26,29 +28,46 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  // 通常ボタン
-  const content = (
+  // 🔗 リンク付きボタン（<a>をボタン風にする）
+  if (href) {
+    const isInternal = href.startsWith("#") || href.startsWith("/");
+
+    const StyledLink = (
+      <StyledLinkButton
+        href={href}
+        $variant={variant}
+        $size={size}
+        $block={block}
+        aria-label={ariaLabel}
+      >
+        {icon && <span>{icon}</span>}
+        {children}
+      </StyledLinkButton>
+    );
+
+    return isInternal ? (
+      <Link href={href} legacyBehavior>
+        {StyledLink}
+      </Link>
+    ) : (
+      StyledLink
+    );
+  }
+
+  // 🎯 通常ボタン
+  return (
     <StyledButton
       onClick={onClick}
-      $variant={variant === "image" ? "default" : variant} // 👈 imageは回避
+      $variant={variant}
       $size={size}
+      $block={block}
+      disabled={disabled}
       aria-label={ariaLabel}
     >
       {icon && <span>{icon}</span>}
       {children}
     </StyledButton>
   );
-
-  // リンクあり
-  if (href) {
-    return (
-      <Link href={href} passHref legacyBehavior>
-        <a>{content}</a>
-      </Link>
-    );
-  }
-
-  return content;
 };
 
 export default Button;

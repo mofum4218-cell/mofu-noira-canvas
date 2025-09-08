@@ -16,6 +16,7 @@ export const Logo = styled.div`
   img {
     width: 120px;
     height: auto;
+    cursor: pointer;
   }
 `;
 
@@ -27,7 +28,7 @@ export const NavItems = styled.div`
     display: none;
   }
 `;
-
+// ナビ内リンク（共通リンク用）
 export const StyledNavLink = styled.a`
   color: ${({ theme }) => theme.text};
   text-decoration: none;
@@ -39,24 +40,8 @@ export const StyledNavLink = styled.a`
   }
 `;
 
-export const ContactButton = styled.button`
-  padding: 0.5rem 1rem;
-  background-color: ${({ theme }) => theme.accent};
-  color: ${({ theme }) => theme.text};
-  border: none;
-  border-radius: ${({ theme }) => theme.radius?.md ?? "8px"};
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.hover};
-  }
-`;
-
-export const Hamburger = styled.button`
-  background: none;
-  border: none;
+// モバイル用ハンバーガーボタン
+export const Hamburger = styled.div`
   display: none;
   cursor: pointer;
 
@@ -64,4 +49,3 @@ export const Hamburger = styled.button`
     display: block;
   }
 `;
-

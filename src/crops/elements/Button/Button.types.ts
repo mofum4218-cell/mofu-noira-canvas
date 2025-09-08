@@ -1,15 +1,23 @@
 // src/crops/elements/Button/Button.types.ts
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonVariant = "default" | "outline" | "circle" | "image";
+export type ButtonSize = "sm" | "md" | "lg";
+
+export interface ButtonProps {
   children?: ReactNode;
   onClick?: () => void;
+  href?: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  block?: boolean;
+  disabled?: boolean;
+  isLoading?: boolean;
   icon?: ReactNode;
-  variant?: "default" | "circle" | "image" | "outline";
+  lottie?: ReactNode; // ※Lottie用コンポーネントなど
   imageSrc?: string;
   alt?: string;
-  href?: string;
   ariaLabel?: string;
-   size?: "sm" | "md" | "lg"; // ← 🆕 追加
+  type?: "button" | "submit" | "reset";
 }
 

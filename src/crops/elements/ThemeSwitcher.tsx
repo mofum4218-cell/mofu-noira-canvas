@@ -5,7 +5,7 @@ import { ThemeContext } from "@/greenhouse/themes/ThemeContext";
 import { themeList } from "@/greenhouse/themes/themeList";
 import styled from "styled-components";
 import { log } from "@/utils/logger";
-import Button from "@/crops/elements/Button"; // 共通ボタン
+import Button from "@/crops/elements/Button";
 
 const SwitcherWrapper = styled.div`
   display: flex;
@@ -51,6 +51,8 @@ export const ThemeSwitcher: React.FC = () => {
               setTheme(name);
             }}
             variant={isActive ? "default" : "outline"}
+            size="sm"
+            ariaLabel={`Switch to ${name} theme`}
           >
             {label}
           </Button>

@@ -1,4 +1,3 @@
-// src/crops/elements/Footer/index.tsx
 "use client";
 
 import Link from "next/link";
@@ -29,13 +28,17 @@ const CenterLogo = styled.a`
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
-// Linkを直接スタイリング（legacyBehavior不要）
 const NavLink = styled(Link)`
   color: ${({ theme }) => theme.text};
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
 
   &:hover {
     text-decoration: underline;
@@ -48,6 +51,13 @@ const TopRightNav = styled.div`
   right: 2rem;
   display: flex;
   gap: 1.25rem;
+
+  @media (max-width: 768px) {
+    position: static;
+    margin-bottom: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 const BottomRight = styled.div`
@@ -68,6 +78,12 @@ const BottomRight = styled.div`
     align-items: center;
     gap: 0.5rem;
     justify-content: flex-end;
+    font-weight: bold;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   a {
@@ -79,12 +95,18 @@ const BottomRight = styled.div`
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      {/* 右上ナビゲーション */}
+      {/* 🔝 右上ナビゲーション */}
       <TopRightNav>
         {navItems.map((item, idx) => (
           <NavLink key={idx} href={item.href}>
@@ -93,21 +115,21 @@ const Footer = () => {
         ))}
       </TopRightNav>
 
-      {/* 中央ロゴ＋社名（外部遷移は <a> でOK） */}
+      {/* 🧿 中央ロゴ＋社名 */}
       <CenterLogo href={org.siteUrl} target="_blank" rel="noopener noreferrer">
         <Image
-          src="/merge.png"
+          src={org.logo}
           alt="Merge Logo"
           width={42}
           height={42}
           sizes="42px"
           priority
-          style={{ width: 42, height: 42 }} // レイアウト崩れ防止
+          style={{ width: 42, height: 42 }}
         />
-        CodeyNode .Inc
+        CodeyNode Inc.
       </CenterLogo>
 
-      {/* 下部：法規・クレジット・MergeIcon */}
+      {/* 📄 法規・連絡先・著作権・クレジット */}
       <BottomRight>
         <p>
           <Link href="/terms">利用規約</Link> |{" "}

@@ -1,3 +1,4 @@
+// src/crops/elements/Navbar/MobileMenu.styles.ts
 import styled from "styled-components";
 
 interface OverlayProps {
@@ -44,10 +45,9 @@ export const MobileLink = styled.a`
   }
 `;
 
-export const CloseButton = styled.div`
+export const CloseButtonWrapper = styled.div`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  cursor: pointer;
 `;
 

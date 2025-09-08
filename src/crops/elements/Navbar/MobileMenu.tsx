@@ -2,11 +2,11 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Overlay, MenuContainer, MobileLink, CloseButton } from "./MobileMenu.styles";
+import { Overlay, MenuContainer, MobileLink, CloseButtonWrapper } from "./MobileMenu.styles";
 import { MobileMenuProps } from "./types";
 import Link from "next/link";
-// MobileMenu.tsx の上部
 import Button from "@/crops/elements/Button";
+import { X } from "lucide-react"; // ← 閉じるアイコン
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
   useEffect(() => {
@@ -21,16 +21,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }
   return (
     <Overlay $isOpen={isOpen} onClick={onClose}>
       <MenuContainer onClick={(e) => e.stopPropagation()}>
-        <CloseButton>
-           <Button
-             variant="circle"
-             size="sm"
-             ariaLabel="Close menu"
-             onClick={onClose}
-             >
-           CLOSE
-          </Button>
-      </CloseButton>
+        <CloseButtonWrapper>
+          <Button
+            variant="circle"
+            size="sm"
+            ariaLabel="Close menu"
+            onClick={onClose}
+            icon={<X size={16} />}
+          />
+        </CloseButtonWrapper>
 
         {items.map((item, idx) => (
           <Link key={idx} href={item.href} legacyBehavior>

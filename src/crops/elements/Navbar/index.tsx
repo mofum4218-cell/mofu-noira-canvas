@@ -11,12 +11,11 @@ import {
   Logo,
   NavItems,
   StyledNavLink,
-  ContactButton,
   Hamburger,
 } from "./Navbar.styles";
 import { MobileMenu } from "./MobileMenu";
-import Button from "@/crops/elements/Button"; // 共通ボタンコンポーネント
-import { MenuIcon } from "lucide-react"; // アイコンは lucide でも SVG直読みでもOK
+import Button from "@/crops/elements/Button";
+import { MenuIcon } from "lucide-react";
 
 const navConfig = navConfigJson as NavItem[];
 
@@ -25,6 +24,13 @@ export const Navbar: React.FC = () => {
 
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
   const handleMenuClose = () => setMenuOpen(false);
+
+  const handleScrollToSection = (href: string) => {
+    const section = document.querySelector(href);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <NavbarWrapper>
@@ -42,11 +48,18 @@ export const Navbar: React.FC = () => {
         </Link>
       </Logo>
 
-      {/* ナビゲーションリンク */}
+      {/* 🔗 ナビゲーションリンク */}
       <NavItems>
         {navConfig.map((item, idx) =>
           item.type === "button" ? (
-            <ContactButton key={idx}>{item.label}</ContactButton>
+            <Button
+              key={idx}
+              variant="default"
+              size="sm"
+              onClick={() => handleScrollToSection(item.href)}
+            >
+              {item.label}
+            </Button>
           ) : (
             <StyledNavLink key={idx} href={item.href}>
               {item.label}
@@ -55,17 +68,18 @@ export const Navbar: React.FC = () => {
         )}
       </NavItems>
 
-    {/* ハンバーガー（モバイル） */}
+    {/* 🍔 ハンバーガーボタン（モバイル） */}
 <Hamburger>
   <Button
     variant="circle"
     size="sm"
     ariaLabel="Open menu"
     onClick={handleMenuToggle}
-    icon={<MenuIcon size={16} />} // ← アイコンを中に入れるだけ！
+    icon={<MenuIcon size={16} />}
   />
 </Hamburger>
-      {/* モバイルメニュー */}
+
+      {/* 📱 モバイルメニュー */}
       <MobileMenu isOpen={isMenuOpen} onClose={handleMenuClose} items={navConfig} />
     </NavbarWrapper>
   );
