@@ -17,14 +17,15 @@
     "isolatedModules": true,
     "allowJs": true,
     "noEmit": true,
-    "incremental": true
+    "incremental": true,
+    "types": ["styled-components"] // ← ✅ styled-components を型として読み込む！
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/types",
-    "src/pages"
+    "src",
+    "src/types" // ← ✅ 念のため明示しておく
   ],
   "exclude": ["node_modules"]
 }

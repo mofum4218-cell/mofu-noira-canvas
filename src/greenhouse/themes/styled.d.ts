@@ -9,6 +9,7 @@ declare module 'styled-components' {
     secondary: string;
     hover: string;
     accent: string;
+    surface: string;
 
     radius: {
       sm: string;
