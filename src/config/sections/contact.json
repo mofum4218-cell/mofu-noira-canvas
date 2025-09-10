@@ -1,0 +1,11 @@
+{
+  "id": "contact",
+  "type": "contact",
+  "theme": "forest",
+  "title": "Welcome to Prism",
+  "subtitle": "This is your new conatct section!",
+  "bg": "primary",
+  "effect": "none"   
+}
+
+

@@ -13,6 +13,27 @@ export type HeroSection = SectionBase & {
   bg: string;
 };
 
-// 今後、AboutSection なども同様に追加していける
-export type Section = HeroSection; // | AboutSection | ... etc.
+export type AboutSection = SectionBase & {
+  type: "about";
+  title: string;
+  subtitle: string;
+  bg: string;
+};
+
+export type StrengthsSection = SectionBase & {
+  type: "strengths";
+  title: string;
+  subtitle: string;
+  bg: string;
+};
+
+export type ContactSection = SectionBase & {
+  type: "contact";
+  title: string;
+  subtitle: string;
+  bg: string;
+};
+
+// 全部Union型にする
+export type Section = HeroSection | AboutSection | StrengthsSection | ContactSection;
 

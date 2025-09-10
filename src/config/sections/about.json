@@ -1,0 +1,11 @@
+{
+  "id": "about",
+  "type": "about",
+  "theme": "forest",
+  "title": "Welcome to Prism",
+  "subtitle": "This is your new About section!",
+  "bg": "primary",
+  "effect": "none"   
+}
+
+

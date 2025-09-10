@@ -1,4 +1,4 @@
-// src/crops/sections/hero/index.tsx
+// src/crops/sections/hero/index.ts
 "use client";
 
 import styled from "styled-components";
