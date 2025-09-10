@@ -1,7 +1,7 @@
 // src/crops/elements/Button/Button.types.ts
 import { ReactNode } from "react";
 
-export type ButtonVariant = "default" | "outline" | "circle" | "image";
+export type ButtonVariant = "default" | "outline" | "circle" | "ghost" | "image";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export interface ButtonProps {

@@ -1,9 +1,6 @@
-// src/crops/sections/Strengths/index.tsx
 "use client";
 
 import styled from "styled-components";
-import { imageTokens } from "@/config/images/imageTokens";
-import { useResponsiveImage } from "@/hooks/useResponsiveImage";
 
 type StrengthsProps = {
   id: string;
@@ -13,32 +10,20 @@ type StrengthsProps = {
   bg?: string;
 };
 
-const StrengthsSection = styled.section<{ $bg: string }>`
+// ✅ styled.section に明示的に id を渡す
+const StrengthsSection = styled.section.attrs<{ id: string }>((props) => ({
+  id: props.id,
+}))`
   padding: 4rem;
   background-color: ${({ theme }) => theme.bg};
-  background-image: ${({ $bg }) => `url(${$bg})`};
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: ${({ theme }) => theme.text};
   position: relative;
   overflow: hidden;
 `;
 
-const Strengths: React.FC<StrengthsProps> = ({ title, subtitle, bg }) => {
-  const fallback = imageTokens.content?.sample1 || "";
-
-  const background = useResponsiveImage(
-    {
-      mobile: bg || fallback,
-      tablet: bg || fallback,
-      desktop: bg || fallback,
-    },
-    fallback
-  );
-
+export const Strengths: React.FC<StrengthsProps> = ({ id, title, subtitle }) => {
   return (
-    <StrengthsSection $bg={background}>
+    <StrengthsSection id={id}>
       <h2>{title}</h2>
       <p>{subtitle}</p>
     </StrengthsSection>

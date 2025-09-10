@@ -1,4 +1,3 @@
-// src/crops/sections/Contact/index.tsx
 "use client";
 
 import styled from "styled-components";
@@ -8,10 +7,13 @@ type ContactProps = {
   title: string;
   subtitle: string;
   theme: string;
-  bg?: string; // stringとして受け取るが、今回は使わない
+  bg?: string;
 };
 
-const ContactSection = styled.section`
+// ✅ styled.section に明示的に id を渡す
+const ContactSection = styled.section.attrs<{ id: string }>((props) => ({
+  id: props.id,
+}))`
   padding: 4rem;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
@@ -19,9 +21,9 @@ const ContactSection = styled.section`
   overflow: hidden;
 `;
 
-export const Contact: React.FC<ContactProps> = ({ title, subtitle }) => {
+export const Contact: React.FC<ContactProps> = ({ id, title, subtitle }) => {
   return (
-    <ContactSection>
+    <ContactSection id={id}>
       <h2>{title}</h2>
       <p>{subtitle}</p>
     </ContactSection>
@@ -29,5 +31,4 @@ export const Contact: React.FC<ContactProps> = ({ title, subtitle }) => {
 };
 
 export default Contact;
-
 

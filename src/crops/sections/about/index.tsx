@@ -1,4 +1,3 @@
-// src/crops/sections/about/index.tsx
 "use client";
 
 import styled from "styled-components";
@@ -8,10 +7,13 @@ type AboutProps = {
   title: string;
   subtitle: string;
   theme: string;
-  bg?: string; // stringとして受け取るが、今回は使わない
+  bg?: string;
 };
 
-const AboutSection = styled.section`
+// ✅ styled.section に明示的に id を渡す
+const AboutSection = styled.section.attrs<{ id: string }>((props) => ({
+  id: props.id,
+}))`
   padding: 4rem;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
@@ -19,9 +21,9 @@ const AboutSection = styled.section`
   overflow: hidden;
 `;
 
-export const About: React.FC<AboutProps> = ({ title, subtitle }) => {
+export const About: React.FC<AboutProps> = ({ id, title, subtitle }) => {
   return (
-    <AboutSection>
+    <AboutSection id={id}>
       <h2>{title}</h2>
       <p>{subtitle}</p>
     </AboutSection>

@@ -107,7 +107,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       {/* 🔝 右上ナビゲーション */}
-      <TopRightNav>
+    <TopRightNav>
         {navItems.map((item, idx) => (
           <NavLink key={idx} href={item.href}>
             {item.label}

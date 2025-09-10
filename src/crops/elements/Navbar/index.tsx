@@ -26,10 +26,12 @@ export const Navbar: React.FC = () => {
   const handleMenuClose = () => setMenuOpen(false);
 
   const handleScrollToSection = (href: string) => {
-    const section = document.querySelector(href);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    setTimeout(() => {
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // 👈 遅延をかけてDOMがレンダリングされるのを待つ
   };
 
   return (
@@ -50,37 +52,43 @@ export const Navbar: React.FC = () => {
 
       {/* 🔗 ナビゲーションリンク */}
       <NavItems>
-        {navConfig.map((item, idx) =>
-          item.type === "button" ? (
-            <Button
-              key={idx}
-              variant="default"
-              size="sm"
-              onClick={() => handleScrollToSection(item.href)}
-            >
-              {item.label}
-            </Button>
-          ) : (
-            <StyledNavLink key={idx} href={item.href}>
-              {item.label}
-            </StyledNavLink>
-          )
-        )}
+      {navConfig.map((item, idx) =>
+  item.type === "button" ? (
+    <Button
+      key={idx}
+      variant="default"
+      size="sm"
+      // href は削除
+      onClick={() => handleScrollToSection(item.href)}
+    >
+      {item.label}
+    </Button>
+  ) : (
+    <StyledNavLink key={idx} href={item.href}>
+      {item.label}
+    </StyledNavLink>
+  )
+)}
+
       </NavItems>
 
-    {/* 🍔 ハンバーガーボタン（モバイル） */}
-<Hamburger>
-  <Button
-    variant="circle"
-    size="sm"
-    ariaLabel="Open menu"
-    onClick={handleMenuToggle}
-    icon={<MenuIcon size={16} />}
-  />
-</Hamburger>
+      {/* 🍔 ハンバーガーボタン（モバイル） */}
+      <Hamburger>
+        <Button
+          variant="circle"
+          size="sm"
+          ariaLabel="Open menu"
+          onClick={handleMenuToggle}
+          icon={<MenuIcon size={16} />}
+        />
+      </Hamburger>
 
       {/* 📱 モバイルメニュー */}
-      <MobileMenu isOpen={isMenuOpen} onClose={handleMenuClose} items={navConfig} />
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={handleMenuClose}
+        items={navConfig}
+      />
     </NavbarWrapper>
   );
 };

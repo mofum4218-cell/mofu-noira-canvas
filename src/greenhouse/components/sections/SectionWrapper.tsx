@@ -1,12 +1,16 @@
+// SectionWrapper.tsx
 import styled, { css } from "styled-components";
 import type { DefaultTheme } from "styled-components";
 
 type SectionWrapperProps = {
+  id?: string; // 👈 ← 明示的に受け取る
   $bgColor?: keyof DefaultTheme;
   $bgImage?: string;
 };
 
-export const SectionWrapper = styled.section<SectionWrapperProps>`
+export const SectionWrapper = styled.section.attrs<SectionWrapperProps>(props => ({
+  id: props.id, // ← ここが超重要！
+}))<SectionWrapperProps>`
   ${({ theme, $bgColor, $bgImage }) => {
     const color = theme[$bgColor || "bg"];
     return css`
