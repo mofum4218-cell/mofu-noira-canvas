@@ -4,6 +4,7 @@
   "theme": "forest",
   "title": "Welcome to Prism",
   "subtitle": "This is your new conatct section!",
+  "description": "MergeLabは、人格AIとともに学び、構築し、遊ぶことができるバーチャル空間です。",
   "bg": "primary",
   "effect": "none"   
 }

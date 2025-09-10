@@ -10,7 +10,7 @@ type GridProps = {
 export const GridWrapper = styled.div<GridProps>`
   display: grid;
   grid-template-columns: repeat(${({ columns }) => columns || 1}, 1fr);
-  gap: ${({ theme, gap }) => theme.spacing[gap || "md"]};
+  gap: ${({ theme, gap }) => theme?.spacing?.[gap ?? "md"] ?? "16px"};
 
   ${mq("md")} {
     grid-template-columns: repeat(${({ columns }) => columns || 2}, 1fr);
