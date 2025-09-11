@@ -1,12 +1,18 @@
-// renderers/renderSection.tsx
+// src/renderers/renderSection.tsx
 import dynamic from "next/dynamic";
-import { Section } from "@/greenhouse/types";
+import type {
+  HeroSection,
+  AboutSection,
+  StrengthsSection,
+  ContactSection,
+  Section,
+} from "@/greenhouse/types";
 
-// 💡 Heroだけ dynamic import
-const Hero = dynamic(() => import("@/crops/sections/hero"), { ssr: false });
-const About = dynamic(() => import("@/crops/sections/about"), { ssr: false });
-const Strengths = dynamic(() => import("@/crops/sections/strengths"), { ssr: false });
-const Contact = dynamic(() => import("@/crops/sections/contact"), { ssr: false });
+// 💡 dynamic import 後に as React.FC<型> を明示
+const Hero = dynamic(() => import("@/crops/sections/hero")) as React.FC<HeroSection>;
+const About = dynamic(() => import("@/crops/sections/about")) as React.FC<AboutSection>;
+const Strengths = dynamic(() => import("@/crops/sections/strengths")) as React.FC<StrengthsSection>;
+const Contact = dynamic(() => import("@/crops/sections/contact")) as React.FC<ContactSection>;
 
 export const renderSection = (section: Section) => {
   switch (section.type) {
@@ -22,3 +28,4 @@ export const renderSection = (section: Section) => {
       return null;
   }
 };
+

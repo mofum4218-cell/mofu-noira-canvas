@@ -1,16 +1,12 @@
+// src/crops/sections/contact/index.tsx
+
 "use client";
 
+import React from "react";
 import styled from "styled-components";
+import { Section } from "@/greenhouse/types"; // ✅ 共通型から受け取る
+import SectionTitle from "@/greenhouse/components/sections/SectionTitle/SectionTitle";
 
-type ContactProps = {
-  id: string;
-  title: string;
-  subtitle: string;
-  theme: string;
-  bg?: string;
-};
-
-// ✅ styled.section に明示的に id を渡す
 const ContactSection = styled.section.attrs<{ id: string }>((props) => ({
   id: props.id,
 }))`
@@ -21,11 +17,16 @@ const ContactSection = styled.section.attrs<{ id: string }>((props) => ({
   overflow: hidden;
 `;
 
-export const Contact: React.FC<ContactProps> = ({ id, title, subtitle }) => {
+export const Contact: React.FC<Section> = (section) => {
   return (
-    <ContactSection id={id}>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+    <ContactSection id={section.id}>
+      <SectionTitle
+        title={section.title}
+        subtitle={section.subtitle}
+        description={section.description}
+        lottieSrc={section.lottieSrc} // ✅ JSONに追加すれば自動反映
+      />
+      {/* この下にフォームなど追記できる */}
     </ContactSection>
   );
 };

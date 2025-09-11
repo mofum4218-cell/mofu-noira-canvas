@@ -4,13 +4,16 @@ import React from "react";
 import styled from "styled-components";
 import { Card } from "@/greenhouse/components/card/Card";
 import { GridWrapper } from "@/greenhouse/components/layout/GridWrapper";
+import { SectionTitle } from "@/greenhouse/components/sections/SectionTitle/SectionTitle";
 
 type StrengthsProps = {
   id: string;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
   theme: string;
   bg?: string;
+  lottieSrc?: string;
 };
 
 const StrengthsSection = styled.section.attrs<{ id: string }>((props) => ({
@@ -21,14 +24,25 @@ const StrengthsSection = styled.section.attrs<{ id: string }>((props) => ({
   color: ${({ theme }) => theme.text};
 `;
 
-export const Strengths: React.FC<StrengthsProps> = ({ id, title, subtitle }) => {
+export const Strengths: React.FC<StrengthsProps> = ({
+  id,
+  title,
+  subtitle,
+  description,
+  lottieSrc,
+}) => {
   return (
     <StrengthsSection id={id}>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+      {/* ✅ セクション共通タイトル */}
+      <SectionTitle
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        lottieSrc={lottieSrc}
+      />
 
       {/* 🅰 左画像・右テキスト → モバイルも2列のまま */}
-      <GridWrapper columns={2} mobileColumns={2} gap="lg">
+      <GridWrapper columns={2} mobileColumns={2} gap="lg" style={{ marginTop: "3rem" }}>
         {[1, 2, 1, 2].map((num, idx) => (
           <Card
             key={`card-left-${idx}`}

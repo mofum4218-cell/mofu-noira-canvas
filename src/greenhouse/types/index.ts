@@ -1,39 +1,48 @@
-export type ThemeName = "forest" | "ocean" | "dark" | "neonViolet" | "burningRed" | "iceBlue";
+// types/section.ts
 
+export type ThemeName =
+  | "forest"
+  | "ocean"
+  | "dark"
+  | "neonViolet"
+  | "burningRed"
+  | "iceBlue";
+
+// 🌱 共通ベース型（全セクション共通プロパティ）
 export type SectionBase = {
   id: string;
   type: string;
   theme: ThemeName;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  lottieSrc?: string;
+  bg?: string;
+  effect?: "none" | "vanta" | "three";
 };
 
+// 🌟 各セクション個別定義（必要ならカスタム項目追加）
 export type HeroSection = SectionBase & {
   type: "hero";
-  title: string;
-  subtitle: string;
-  bg: string;
+  // Hero専用追加プロパティがあればここに追加
 };
 
 export type AboutSection = SectionBase & {
   type: "about";
-  title: string;
-  subtitle: string;
-  bg: string;
 };
 
 export type StrengthsSection = SectionBase & {
   type: "strengths";
-  title: string;
-  subtitle: string;
-  bg: string;
 };
 
 export type ContactSection = SectionBase & {
   type: "contact";
-  title: string;
-  subtitle: string;
-  bg: string;
 };
 
-// 全部Union型にする
-export type Section = HeroSection | AboutSection | StrengthsSection | ContactSection;
+// ✅ 全セクションのUnion型（基本これで受け取る）
+export type Section =
+  | HeroSection
+  | AboutSection
+  | StrengthsSection
+  | ContactSection;
 

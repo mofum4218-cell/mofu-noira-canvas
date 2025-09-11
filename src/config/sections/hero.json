@@ -5,6 +5,7 @@
   "title": "Welcome to Prism",
   "subtitle": "This is your new Hero section!",
   "description": "MergeLabは、人格AIとともに学び、構築し、遊ぶことができるバーチャル空間です。",
+  "lottieSrc": "/lottie/sample.json",
   "bg": "primary",
   "effect": "none"   
 }

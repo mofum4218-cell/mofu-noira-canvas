@@ -1,20 +1,20 @@
-// src/crops/sections/about/index.tsx
 "use client";
 
 import styled from "styled-components";
+import { SectionTitle } from "@/greenhouse/components/sections/SectionTitle/SectionTitle"; // 🆕
 import { TextBlock } from "@/greenhouse/components/text/TextBlock";
 import { GridWrapper } from "@/greenhouse/components/layout/GridWrapper";
 
 type AboutProps = {
   id: string;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   description?: string;
   theme: string;
   bg?: string;
+  lottieSrc?: string;
 };
 
-// ✅ styled.section に明示的に id を渡す
 const AboutSection = styled.section.attrs<{ id: string }>((props) => ({
   id: props.id,
 }))`
@@ -30,18 +30,19 @@ export const About: React.FC<AboutProps> = ({
   title,
   subtitle,
   description,
+  lottieSrc,
 }) => {
   return (
     <AboutSection id={id}>
-      <GridWrapper columns={1} gap="md">
-        <TextBlock
-          title={title}
-          subtitle="MergeLabの世界観"
-          description={description}
-          align="left"
-          color="text"
-          font="noto"
-        />
+      {/* ✅ 共通タイトル部分 */}
+      <SectionTitle
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        lottieSrc={lottieSrc}
+      />
+
+      <GridWrapper columns={1} gap="md" style={{ marginTop: "3rem" }}>
         <TextBlock
           title="AIと遊ぶ"
           subtitle="人格を持った先輩たち"

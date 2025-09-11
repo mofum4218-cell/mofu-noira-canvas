@@ -10,8 +10,8 @@ import Image from "next/image";
 import { mq } from "@/greenhouse/components/layout/ResponsiveHelpers";
 
 type HeroProps = {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   effect?: "none" | "vanta" | "three";
 };
 
