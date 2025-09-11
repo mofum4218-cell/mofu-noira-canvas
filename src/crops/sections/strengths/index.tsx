@@ -1,6 +1,9 @@
 "use client";
 
+import React from "react";
 import styled from "styled-components";
+import { Card } from "@/greenhouse/components/card/Card";
+import { GridWrapper } from "@/greenhouse/components/layout/GridWrapper";
 
 type StrengthsProps = {
   id: string;
@@ -10,15 +13,12 @@ type StrengthsProps = {
   bg?: string;
 };
 
-// ✅ styled.section に明示的に id を渡す
 const StrengthsSection = styled.section.attrs<{ id: string }>((props) => ({
   id: props.id,
 }))`
   padding: 4rem;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
-  position: relative;
-  overflow: hidden;
 `;
 
 export const Strengths: React.FC<StrengthsProps> = ({ id, title, subtitle }) => {
@@ -26,6 +26,49 @@ export const Strengths: React.FC<StrengthsProps> = ({ id, title, subtitle }) => 
     <StrengthsSection id={id}>
       <h2>{title}</h2>
       <p>{subtitle}</p>
+
+      {/* 🅰 左画像・右テキスト → モバイルも2列のまま */}
+      <GridWrapper columns={2} mobileColumns={2} gap="lg">
+        {[1, 2, 1, 2].map((num, idx) => (
+          <Card
+            key={`card-left-${idx}`}
+            title={`Card Left ${idx + 1}`}
+            subtitle="副題"
+            description="これは左画像のカードです。"
+            imageSrc={`/img/card${num}.png`}
+            imagePosition="left"
+            layout="horizontal"
+          />
+        ))}
+      </GridWrapper>
+
+      {/* 🅱 画像上・テキスト下 → モバイルは1列に */}
+      <GridWrapper columns={3} mobileColumns={1} gap="lg" style={{ marginTop: "4rem" }}>
+        {[1, 2, 1].map((num, idx) => (
+          <Card
+            key={`card-top-${idx}`}
+            title={`Card Top ${idx + 1}`}
+            subtitle="上に画像"
+            description="上画像・下テキストのカードです。"
+            imageSrc={`/img/card${num}.png`}
+          />
+        ))}
+      </GridWrapper>
+
+      {/* 🆎 右画像・左テキスト → モバイルは1列に */}
+      <GridWrapper columns={2} mobileColumns={1} gap="lg" style={{ marginTop: "4rem" }}>
+        {[2, 1, 2, 1].map((num, idx) => (
+          <Card
+            key={`card-right-${idx}`}
+            title={`Card Right ${idx + 1}`}
+            subtitle="副題"
+            description="これは右画像のカードです。"
+            imageSrc={`/img/card${num}.png`}
+            imagePosition="right"
+            layout="horizontal"
+          />
+        ))}
+      </GridWrapper>
     </StrengthsSection>
   );
 };
