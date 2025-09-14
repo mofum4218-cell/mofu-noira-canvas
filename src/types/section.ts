@@ -28,16 +28,43 @@ export type SectionBase = {
 // ==============================
 
 // 🦾 Strengths（アイコン付き特徴カード）
+// 🧠 Planカード（tabs用）との区別も兼ねて共存！
 export type FeatureItem = {
-  icon: string; // アイコン名（例: "sparkles", "award"）
+  icon: string;
   title: string;
   subtitle?: string;
   description?: string;
 };
 
+// 💎 Plan用カード（planタブ内に表示するカード）
+export type PlanCardItem = {
+  icon: string;
+  title: string;
+  desc?: string;
+};
+
+// 🧩 Plan用タブ構造（tabの中にcardsやlottieを持つ）
+export type PlanTab = {
+  name: string;
+  subtitle: string;
+  description: string;
+  lottie: string;
+  cards: {
+    icon: string;
+    title: string;
+    desc: string;
+  }[];
+  image: string;
+};
+export type PlanSection = SectionBase & {
+  type: "strengths"; // 💡 Plan も strengths セクション扱い
+  tabs: PlanTab[];
+};
+// 💡 StrengthsSection は今後プラン機能を兼ねるので統合
 export type StrengthsSection = SectionBase & {
   type: "strengths";
   features?: FeatureItem[];
+  tabs?: PlanTab[]; // ← 🆕 これが plan 対応ポイント！
 };
 
 // 🪄 About（必要なら拡張）
@@ -53,7 +80,7 @@ export type FAQItem = {
 
 export type ContactSection = SectionBase & {
   type: "contact";
-  faq?: FAQItem[]; // ✅ ここが新しく追加された部分
+  faq?: FAQItem[];
 };
 
 // 🎮 Hero（背景や効果）

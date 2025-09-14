@@ -2,24 +2,79 @@
   "id": "strengths",
   "type": "strengths",
   "theme": "forest",
-  "title": "MergeLabの強み",
-  "subtitle": "AIと共に進化する開発空間",
-  "description": "個性豊かなAI先輩たちと共に創造の旅へ",
-  "lottieSrc": "/lottie/sample.json",
-  "bg": "primary",
-  "effect": "none",
-  "features": [
+  "title": "あなたに最適なプランを選ぼう",
+  "tabs": [
     {
-      "icon": "Sparkles",
-      "title": "創造力の解放",
-      "subtitle": "自由に形を与える力",
-      "description": "MergeLabでは、思考がすぐに形になります。"
+      "name": "ライトプラン",
+      "subtitle": "気軽に始めたい人向け",
+      "description": "最初の一歩を踏み出すあなたに。必要最小限の機能を備えた入門用プランです。",
+      "lottie": "/lottie/plan.json",
+      "cards": [
+        {
+          "icon": "sparkles",
+          "title": "基本機能搭載",
+          "desc": "使いやすさを重視した構成"
+        },
+        {
+          "icon": "award",
+          "title": "サポート対応",
+          "desc": "メールによる平日対応"
+        },
+        {
+          "icon": "code",
+          "title": "カスタマイズ",
+          "desc": "簡易設定が可能"
+        }
+      ],
+      "image": "/img/plan.png"
     },
     {
-      "icon": "Award",
-      "title": "実績と成長",
-      "subtitle": "開発を通じてレベルアップ",
-      "description": "タスク完遂で知識もスキルも一緒に育ちます。"
+      "name": "スタンダードプラン",
+      "subtitle": "日常利用に最適な標準モデル",
+      "description": "豊富な機能と安心のサポート。中長期的な運用を視野に入れたバランス型プラン。",
+      "lottie": "/lottie/plan.json",
+      "cards": [
+        {
+          "icon": "sparkles",
+          "title": "充実した機能",
+          "desc": "多用途に対応"
+        },
+        {
+          "icon": "award",
+          "title": "優先サポート",
+          "desc": "チャット対応も可能"
+        },
+        {
+          "icon": "brain",
+          "title": "高度な分析",
+          "desc": "利用状況の可視化"
+        }
+      ],
+      "image": "/img/plan.png"
+    },
+    {
+      "name": "プロプラン",
+      "subtitle": "全機能解放＋最上位対応",
+      "description": "ビジネスやチーム利用にも対応。最高レベルのパフォーマンスと自由度を提供します。",
+      "lottie": "/lottie/plan.json",
+      "cards": [
+        {
+          "icon": "sparkles",
+          "title": "全機能フルアンロック",
+          "desc": "上限なしで利用可能"
+        },
+        {
+          "icon": "code",
+          "title": "完全カスタム",
+          "desc": "要望に応じて調整可能"
+        },
+        {
+          "icon": "brain",
+          "title": "AI連携",
+          "desc": "MergeAIとの統合機能"
+        }
+      ],
+      "image": "/img/plan.png"
     }
   ]
 }
