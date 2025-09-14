@@ -13,11 +13,14 @@ import { Navbar } from "@/crops/elements/Navbar";
 import "@/styles/globals.css";
 import Footer from "@/crops/elements/Footer";
 
+// ✅ 追加
+import LoadingScreen from "@/components/ui/LoadingScreen";
+
 export default function App({ Component, pageProps }: AppProps) {
   const [themeName, setThemeName] = useState<ThemeName>("forest");
   const [mounted, setMounted] = useState(false);
+  const [showLoading, setShowLoading] = useState(true); // ✅ ローディング制御
 
-  // 初回：localStorage からテーマを復元し、終わったら mounted=true
   useEffect(() => {
     try {
       const saved = localStorage.getItem("theme") as ThemeName | null;
@@ -30,23 +33,21 @@ export default function App({ Component, pageProps }: AppProps) {
     } finally {
       setMounted(true);
     }
-    // （任意）別タブでの変更も同期したい場合は storage イベントを使う
-    // const onStorage = (ev: StorageEvent) => {
-    //   if (ev.key === "theme" && ev.newValue) setThemeName(ev.newValue as ThemeName);
-    // };
-    // window.addEventListener("storage", onStorage);
-    // return () => window.removeEventListener("storage", onStorage);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // ✅ ローディング終了タイマー
+    const loadingTimer = setTimeout(() => {
+      setShowLoading(false);
+    }, 5500); // 5秒+αで自然にアニメ終わるの待つ
+
+    return () => clearTimeout(loadingTimer);
   }, []);
 
-  // themeName -> theme オブジェクト
   const theme = useMemo(() => {
     const t = getTheme(themeName);
     log.info("🎨 getTheme:", themeName, t);
     return t;
   }, [themeName]);
 
-  // Contextに渡す setTheme（保存＋state更新）
   const handleSetTheme = useCallback((name: ThemeName) => {
     log.info("🔁 setTheme:", name);
     try {
@@ -62,15 +63,20 @@ export default function App({ Component, pageProps }: AppProps) {
     [themeName, handleSetTheme]
   );
 
-  // 復元完了前は描画しない（水和ズレ/チラつき回避）
-  if (!mounted) return null; // ここをローディングUIにしてもOK
+  if (!mounted) return null;
 
   return (
-    // keyは付けても付けなくてもOK。付けるとテーマ変更時に貼り替えが確実（子の内部状態は維持したいなら外しても可）
     <ThemeProvider key={themeName} theme={theme}>
       <ThemeContext.Provider value={contextValue}>
         <GlobalThemeStyle />
-        <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        {showLoading && <LoadingScreen />} {/* ✅ ローディング画面 */}
+        <div
+          style={{
+            display: showLoading ? "none" : "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
           <Navbar />
           <div style={{ flex: 1 }}>
             <Component {...pageProps} />
