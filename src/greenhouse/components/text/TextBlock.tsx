@@ -24,7 +24,7 @@ export const TextBlock: React.FC<Props> = ({
       align={align}
       color={color}
       font={font}
-      maxWidth={maxWidth}
+      $maxWidth={maxWidth}
     >
       {title && <h2>{title}</h2>}
       {subtitle && <h3>{subtitle}</h3>}

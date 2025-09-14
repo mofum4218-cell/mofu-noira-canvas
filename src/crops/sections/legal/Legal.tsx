@@ -1,11 +1,39 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import org from "@/config/org/org.json";
 
 const Legal: React.FC = () => {
+  const router = useRouter();
+
   return (
-    <section style={{ padding: "2rem", backgroundColor: "#f9f9f9" }}>
+    <section
+      style={{
+        position: "relative",
+        padding: "2rem",
+        backgroundColor: "#f9f9f9",
+        minHeight: "100vh",
+      }}
+    >
+      {/* 閉じるボタン */}
+      <button
+        onClick={() => router.push("/")}
+        style={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+          background: "transparent",
+          border: "none",
+          fontSize: "1.5rem",
+          cursor: "pointer",
+        }}
+        aria-label="閉じる"
+        title="閉じる"
+      >
+        ×
+      </button>
+
       <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem" }}>
         特定商取引法に基づく表記
       </h2>

@@ -40,7 +40,7 @@ export const Navbar: React.FC = () => {
       <Logo>
         <Link href="#hero" scroll={true} aria-label="Scroll to Hero">
           <Image
-            src="/merge.png"
+            src="/logo.svg"
             alt="Logo"
             width={120}
             height={40}

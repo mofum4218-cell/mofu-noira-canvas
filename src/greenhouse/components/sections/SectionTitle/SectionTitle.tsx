@@ -10,7 +10,6 @@ import {
   StyledLottie,
   StyledTextBlock,
 } from "./SectionTitle.styles";
-import { TextBlock } from "@/greenhouse/components/text/TextBlock";
 
 // ✅ LottiePlayer を SSR 無効で読み込む！
 const Player = dynamic(
@@ -44,7 +43,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         align={align}
         color={color}
         font={font}
-        maxWidth={maxWidth}
+         $maxWidth={maxWidth}
       >
         {title && <h2>{title}</h2>}
         {subtitle && <h3>{subtitle}</h3>}

@@ -2,12 +2,25 @@
   "id": "strengths",
   "type": "strengths",
   "theme": "forest",
-  "title": "Welcome to Prism",
-  "subtitle": "This is your new strengths section!",
-  "description": "MergeLabは、人格AIとともに学び、構築し、遊ぶことができるバーチャル空間です。",
+  "title": "MergeLabの強み",
+  "subtitle": "AIと共に進化する開発空間",
+  "description": "個性豊かなAI先輩たちと共に創造の旅へ",
   "lottieSrc": "/lottie/sample.json",
-  "bg": "/img/sample1.webp",
-  "effect": "none"   
+  "bg": "primary",
+  "effect": "none",
+  "features": [
+    {
+      "icon": "Sparkles",
+      "title": "創造力の解放",
+      "subtitle": "自由に形を与える力",
+      "description": "MergeLabでは、思考がすぐに形になります。"
+    },
+    {
+      "icon": "Award",
+      "title": "実績と成長",
+      "subtitle": "開発を通じてレベルアップ",
+      "description": "タスク完遂で知識もスキルも一緒に育ちます。"
+    }
+  ]
 }
-
 
