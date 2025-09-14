@@ -3,11 +3,25 @@
   "type": "contact",
   "theme": "forest",
   "title": "Welcome to Prism",
-  "subtitle": "This is your new conatct section!",
+  "subtitle": "This is your new contact section!",
   "description": "MergeLabは、人格AIとともに学び、構築し、遊ぶことができるバーチャル空間です。",
   "lottieSrc": "/lottie/sample.json",
   "bg": "primary",
-  "effect": "none"   
-}
+  "effect": "none",
 
+  "faq": [
+    {
+      "question": "MergeLabって何ができるの？ ",
+      "answer": "人格AIと一緒にWeb開発や創造的プロジェクトができます。"
+    },
+    {
+      "question": "誰でも使えますか？",
+      "answer": "はい！初心者でも扱いやすく設計されています。"
+    },
+    {
+      "question": "料金はかかりますか？",
+      "answer": "基本無料です。一部機能に課金予定があります。"
+    }
+  ]
+}
 

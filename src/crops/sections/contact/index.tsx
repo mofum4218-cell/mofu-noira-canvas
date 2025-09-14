@@ -1,13 +1,13 @@
 // src/crops/sections/contact/index.tsx
-
 "use client";
 
 import React from "react";
 import styled from "styled-components";
-import { Section } from "@/greenhouse/types"; // ✅ 共通型から受け取る
+import { ContactSection as ContactType } from "@/types/section"; // 型も専用で
 import SectionTitle from "@/greenhouse/components/sections/SectionTitle/SectionTitle";
+import Accordion from "@/greenhouse/components/accordion/Accordion"; // ✅ motionアコーディオン
 
-const ContactSection = styled.section.attrs<{ id: string }>((props) => ({
+const ContactWrapper = styled.section.attrs<{ id: string }>((props) => ({
   id: props.id,
 }))`
   padding: 4rem;
@@ -17,17 +17,21 @@ const ContactSection = styled.section.attrs<{ id: string }>((props) => ({
   overflow: hidden;
 `;
 
-export const Contact: React.FC<Section> = (section) => {
+export const Contact: React.FC<ContactType> = (section) => {
   return (
-    <ContactSection id={section.id}>
+    <ContactWrapper id={section.id}>
       <SectionTitle
         title={section.title}
         subtitle={section.subtitle}
         description={section.description}
-        lottieSrc={section.lottieSrc} // ✅ JSONに追加すれば自動反映
+        lottieSrc={section.lottieSrc}
       />
-      {/* この下にフォームなど追記できる */}
-    </ContactSection>
+
+      {/* 💬 FAQアコーディオン */}
+      {section.faq && section.faq.length > 0 && (
+        <Accordion items={section.faq} />
+      )}
+    </ContactWrapper>
   );
 };
 

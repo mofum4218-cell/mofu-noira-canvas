@@ -45,9 +45,15 @@ export type AboutSection = SectionBase & {
   type: "about";
 };
 
-// 📮 Contact（フォーム付きなどに拡張可）
+// 💬 Contact（FAQ付き・フォームなどに拡張可）
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
 export type ContactSection = SectionBase & {
   type: "contact";
+  faq?: FAQItem[]; // ✅ ここが新しく追加された部分
 };
 
 // 🎮 Hero（背景や効果）
