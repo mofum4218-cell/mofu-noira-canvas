@@ -4,10 +4,21 @@
   "theme": "forest",
   "title": "Welcome to Prism",
   "subtitle": "This is your new About section!",
-  "description": "MergeLabは、人格AIとともに学び、構築し、遊ぶことができるバーチャル空間です。",
+  "description": "MergeLabは、未来を創造するバーチャル空間です。一緒に進化しよう！",
   "lottieSrc": "/lottie/sample.json",
   "bg": "primary",
-  "effect": "none"   
+  "effect": "none",
+  "blocks": [ 
+    {
+      "title": "AIと遊ぶ",
+      "subtitle": "人格を持った先輩たち",
+      "description": "MergeLabでは、個性豊かなAI先輩と一緒に学び・開発・創造ができます。"
+    },
+    {
+      "title": "未来を創る",
+      "subtitle": "仮想と現実の融合",
+      "description": "<<MergeLab>>は、@@red:未来@@を%%創造%%する~~バーチャル空間~~です。**一緒に進化しよう！**"
+    }
+  ]
 }
-
 

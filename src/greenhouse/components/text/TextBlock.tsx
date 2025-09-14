@@ -7,7 +7,7 @@ import { TextBlockWrapper, type TextBlockProps } from "./TextBlock.styles";
 type Props = TextBlockProps & {
   title?: string;
   subtitle?: string;
-  description?: string;
+  description?: string | React.ReactNode;
 };
 
 export const TextBlock: React.FC<Props> = ({
@@ -24,11 +24,17 @@ export const TextBlock: React.FC<Props> = ({
       align={align}
       color={color}
       font={font}
-      $maxWidth={maxWidth}
+    $maxWidth={maxWidth}    //ハイドレーション対策
     >
       {title && <h2>{title}</h2>}
       {subtitle && <h3>{subtitle}</h3>}
-      {description && <p>{description}</p>}
+
+      {/* ✅ ここで JSX or string を出し分け！ */}
+      {description && (
+        typeof description === "string"
+          ? <p>{description}</p>
+          : <>{description}</> // ← JSX（マーカーなど）をそのまま挿入
+      )}
     </TextBlockWrapper>
   );
 };
