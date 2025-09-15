@@ -18,6 +18,8 @@ export const TextBlockWrapper = styled.div<TextBlockProps>`
 
   ${({ theme }) => `
     padding: ${theme?.spacing?.md ?? "16px"};
+    white-space: pre-line;         // ✅ 改行文字（\n）をそのまま表示
+    word-break: break-word;        // ✅ 長すぎる単語を折り返し
   `}
 
   ${({ theme, color = "text" }) => `
@@ -30,3 +32,4 @@ export const TextBlockWrapper = styled.div<TextBlockProps>`
     return `font-family: ${selectedFont};`;
   }}
 `;
+

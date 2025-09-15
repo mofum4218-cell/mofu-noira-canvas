@@ -4,7 +4,7 @@
   "theme": "forest",
   "title": "Welcome to Prism",
   "subtitle": "This is your new About section!",
-  "description": "MergeLabは、未来を創造するバーチャル空間です。一緒に進化しよう！",
+  "description": "MergeLabは、未来を創造する\nバーチャル空間です。一緒に進化しよう！",
   "lottieSrc": "/lottie/sample.json",
   "bg": "primary",
   "effect": "none",
