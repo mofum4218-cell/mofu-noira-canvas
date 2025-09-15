@@ -14,7 +14,7 @@ export const StyledButton = styled.button<{
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
-  border-radius: ${({ theme }) => theme.radius.md};
+  border-radius: ${({ theme }) => theme?.radius?.md ?? "8px"};
   font-weight: bold;
   text-align: center;
 
@@ -108,7 +108,7 @@ export const StyledLinkButton = styled.a<{
 
   text-decoration: none;
   cursor: pointer;
-  border-radius: ${({ theme }) => theme.radius.md};
+  border-radius: ${({ theme }) => theme?.radius?.md ?? "8px"};
   transition: all 0.3s ease;
 
   font-size: ${({ $size }) => {

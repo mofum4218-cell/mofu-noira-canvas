@@ -1,14 +1,24 @@
 // src/crops/elements/Navbar/Navbar.styles.ts
 import styled from "styled-components";
 
-export const NavbarWrapper = styled.nav`
+// 💡 fixed or absolute 切り替え可能に！
+export const NavbarWrapper = styled.nav<{ $fixed?: boolean }>`
+  position: ${({ $fixed = false }) => ($fixed ? "fixed" : "absolute")};
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: ${({ theme }) => theme.primary};
+
+  // 💡 透過で背景を活かす（必要に応じて下で調整）
+  background-color: transparent;
 `;
 
+// ロゴ
 export const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -20,6 +30,7 @@ export const Logo = styled.div`
   }
 `;
 
+// デスクトップナビ項目
 export const NavItems = styled.div`
   display: flex;
   gap: 1.5rem;
@@ -28,19 +39,21 @@ export const NavItems = styled.div`
     display: none;
   }
 `;
-// ナビ内リンク（共通リンク用）
+
+// 💡 ナビリンク色（視認性強化）
 export const StyledNavLink = styled.a`
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme?.text ?? "#fff"}; // ← ここ強制白じゃなく theme.text に戻してみた
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.2s;
 
   &:hover {
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.accent}; // ← アクセント色で明確に変化
   }
 `;
 
-// モバイル用ハンバーガーボタン
+// モバイル用ハンバーガー
 export const Hamburger = styled.div`
   display: none;
   cursor: pointer;
@@ -49,3 +62,4 @@ export const Hamburger = styled.div`
     display: block;
   }
 `;
+

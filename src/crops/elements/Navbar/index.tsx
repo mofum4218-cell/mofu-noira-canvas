@@ -35,10 +35,11 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <NavbarWrapper>
+      // Navbar.tsx で Wrapperに $fixed 渡せば切替可能！
+    <NavbarWrapper $fixed={false}>
       {/* 🔄 ロゴ：Heroセクションへジャンプ */}
       <Logo>
-        <Link href="#hero" scroll={true} aria-label="Scroll to Hero">
+        <Link href="/" scroll={true} aria-label="Scroll to Hero">
           <Image
             src="/logo.svg"
             alt="Logo"
