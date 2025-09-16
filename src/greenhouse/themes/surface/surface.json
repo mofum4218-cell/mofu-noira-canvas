@@ -1,39 +1,21 @@
 {
-  "forest": {
-    "primary": "#4CAF50",
-    "secondary": "#81C784",
-    "hover": "#66BB6A",
-    "accent": "#2E7D32"
+  "pop": {
+    "primary": "#FF6B81",
+    "secondary": "#FF9F1C",
+    "hover": "#FFB347",
+    "accent": "#FF4081"
   },
-  "ocean": {
-    "primary": "#0288D1",
-    "secondary": "#4FC3F7",
-    "hover": "#03A9F4",
-    "accent": "#01579B"
+  "night": {
+    "primary": "#1C1C1C",
+    "secondary": "#2C2C2C",
+    "hover": "#3A3A3A",
+    "accent": "#00BFFF"
   },
-  "dark": {
-    "primary": "#212121",
-    "secondary": "#424242",
-    "hover": "#616161",
-    "accent": "#FF5722"
-  },
-  "neonViolet": {
-      "primary": "#8373C7",
-      "secondary": "#39FF14",
-      "hover": "#A29BFE",
-      "accent": "#39FF14"
-  },
-  "burningRed": {
-      "primary": "#FF3830",
-      "secondary": "#FFD700",
-      "hover": "#FF5733",
-      "accent": "#FF6F61"
-  },
-  "iceBlue": {
-      "primary": "#A4DFFF",
-      "secondary": "D3D3D3",
-      "hover": "#B2EBF2",
-      "accent": "#E0F7FA"
+  "clear": {
+    "primary": "#FFFFFF",
+    "secondary": "#F0F0F0",
+    "hover": "#E0E0E0",
+    "accent": "#3DDC97"
   }
 }
 

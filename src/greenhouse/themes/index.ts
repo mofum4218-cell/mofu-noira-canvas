@@ -5,79 +5,40 @@ import { typography } from "./typography";
 import { breakpoints } from "./breakpoints/breakpoints";
 
 export const theme: Record<string, DefaultTheme> = {
-  forest: {
-    bg: "#E8F5E9",
-    text: "#1B5E20",
-    primary: "#4CAF50",
-    secondary: "#81C784",
-    hover: "#66BB6A",
-    accent: "#1DE9B6",
+  pop: {
+    bg: "#FFF9F0", // 明るめ背景
+    text: "#1E1E1E", // 黒に近い
+    primary: "#FF6B81", // ピンク系主色
+    secondary: "#FFD166", // イエロー系副色
+    accent: "#00B8D9", // アクセントブルー
+    hover: "#FFADAD",
+    surface: "#FFFFFF", // カードなど
+    radius,
+    spacing,
+    typography,
+    breakpoints,
+  },
+  night: {
+    bg: "#121212", // 暗め背景
+    text: "#E0E0E0", // 明るいグレー
+    primary: "#1F1F1F",
+    secondary: "#444",
+    accent: "#FF4081", // ビビッドピンク
+    hover: "#333333",
+    surface: "#1E1E1E",
+    radius,
+    spacing,
+    typography,
+    breakpoints,
+  },
+  clear: {
+    bg: "#F0FCFF", // 青白っぽい透明感
+    text: "#1A1A1A",
+    primary: "#A0E7E5", // 水色
+    secondary: "#B4F8C8", // 淡いグリーン
+    accent: "#FBE7C6", // 薄オレンジ
+    hover: "#C9F3F2",
     surface: "#FFFFFF",
-    radius,
-    spacing,
-    typography,
-    breakpoints,
-  },
-  ocean: {
-    bg: "#E1F5FE",
-    text: "#01579B",
-    primary: "#0288D1",
-    secondary: "#4FC3F7",
-    hover: "#03A9F4",
-    accent: "#00ACC1",
-     surface: "#FFFFFF",
-    radius,
-    spacing,
-    typography,
-    breakpoints,
-  },
-  dark: {
-    bg: "#121212",
-    text: "#FAFAFA",
-    primary: "#212121",
-    secondary: "#616161",
-    hover: "#616161",
-    accent: "#FF5722",
-     surface: "#FFFFFF",
-    radius,
-    spacing,
-    typography,
-    breakpoints,
-  },
-  neonViolet: {
-     primary: "#8373C7",
-    secondary: "#39FF14",
-    bg: "#121212",
-    text: "#FFFFFF",
-    accent: "#39FF14",
-    hover: "#A29BFE",
-     surface: "#FFFFFF",
-    radius,
-    spacing,
-    typography,
-    breakpoints,
-  },
-  burningRed: {
-    primary: "#FF3830",
-    secondary: "#FFD700",
-    bg: "#121212",
-    text: "#FFFFFF",
-    accent: "#FF6F61",
-    hover: "#FF5733",
-     surface: "#FFFFFF",
-    radius,
-    spacing,
-    typography,
-    breakpoints,
-  },
-  iceBlue: {
-     primary: "#A4DFFF",
-    secondary: "#D3D3D3",
-    bg: "#FFFFFF",
-    text: "#121212",
-    accent: "#E0F7FA",
-    hover: "#B2EBF2",
-     surface: "#FFFFFF",
     radius,
     spacing,
     typography,

@@ -1,13 +1,9 @@
 // 🌈 使用するテーマ一覧（追加したらここも更新）
 export type ThemeName =
-  | "forest"
-  | "ocean"
-  | "dark"
-  | "neonViolet"
-  | "burningRed"
-  | "iceBlue";
-
-// 💡 Lottieエフェクトの種類
+  | "pop"
+  | "nigth"
+  | "clear";
+ // 💡 Lottieエフェクトの種類
 export type EffectType = "none" | "vanta" | "three";
 
 // 🧱 各セクションで共通する基本構造

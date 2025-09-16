@@ -1,12 +1,9 @@
 {
   "id": "hero",
   "type": "hero",
-  "theme": "forest",
-  "title": "Welcome to Prism",
-  "subtitle": "This is your new Hero section!",
-  "description": "MergeLabは、人格AIとともに学び、構築し、遊ぶことができるバーチャル空間です。",
-  "lottieSrc": "/lottie/sample.json",
-  "bg": "primary",
-  "effect": "none"   
+  "theme": "clear",
+  "title": "PRISM WEB",
+  "subtitle": "洗練されたクリアデザイン",
+  "description": "若者向けのクールでスタイリッシュな雰囲気を強調。透明感のあるインターフェースで魅力的な体験を。"
 }
 

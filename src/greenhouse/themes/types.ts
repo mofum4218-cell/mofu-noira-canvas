@@ -1,1 +1,4 @@
-export type ThemeName = "forest" | "ocean" | "dark" | "neonViolet" | "burningRed" | "iceBlue";
+// src/greenhouse/themes/types.ts
+
+export type ThemeName = "pop" | "night" | "clear";
+

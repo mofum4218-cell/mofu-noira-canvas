@@ -1,13 +1,10 @@
 // types/section.ts
 
 export type ThemeName =
-  | "forest"
-  | "ocean"
-  | "dark"
-  | "neonViolet"
-  | "burningRed"
-  | "iceBlue";
-
+  | "pop"
+  | "night"
+  | "clear";
+ 
 // 🌱 共通ベース型（全セクション共通プロパティ）
 export type SectionBase = {
   id: string;
