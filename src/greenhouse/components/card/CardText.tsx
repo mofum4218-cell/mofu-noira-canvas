@@ -5,9 +5,9 @@ import TextBlock from "@/greenhouse/components/text/TextBlock";
 import type { TextBlockProps } from "@/greenhouse/components/text/TextBlock.styles";
 
 type Props = TextBlockProps & {
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  title?: React.ReactNode;        // ✅ string から ReactNode に変更
+  subtitle?: React.ReactNode;     // ✅ string から ReactNode に変更
+  description?: React.ReactNode;  // ✅ string から ReactNode に変更
 };
 
 export const CardText: React.FC<Props> = ({
@@ -33,4 +33,5 @@ export const CardText: React.FC<Props> = ({
 };
 
 export default CardText;
+
 

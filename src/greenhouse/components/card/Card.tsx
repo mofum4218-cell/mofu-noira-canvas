@@ -7,10 +7,10 @@ import { DefaultTheme } from "styled-components";
 import CardText from "./CardText";
 
 export type CardProps = {
-  title: string;
-  subtitle?: string;
-  description?: string;
-  imageSrc?: string;
+    title?: React.ReactNode;
+  subtitle?: React.ReactNode;
+  description?: React.ReactNode;
+    imageSrc?: string;
   imageAlt?: string;
   imagePosition?: "top" | "left" | "right";
   surfaceColor?: keyof DefaultTheme;
@@ -52,4 +52,6 @@ export const Card: React.FC<CardProps> = ({
 };
 
 export default Card;
+
+
 
