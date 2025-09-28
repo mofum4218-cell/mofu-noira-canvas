@@ -9,6 +9,7 @@ import warpTunnelConfig from "@/config/pages/warp-tunnel.json";
 import noiraOrbitalConfig from "@/config/pages/noira-orbital.json";
 import luminousSphereConfig from "@/config/pages/luminous-sphere.json";
 import noiraPolyConfig from "@/config/pages/noira-poly.json";
+import noiraFlowConfig from "@/config/pages/noira-flow.json";
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -55,6 +56,11 @@ export const Exhibition: React.FC = () => {
         id={noiraPolyConfig.id}
         title={noiraPolyConfig.title}
         subtitle={noiraPolyConfig.subtitle}
+      />
+      <GalleryCard
+        id={noiraFlowConfig.id}
+        title={noiraFlowConfig.title}
+        subtitle={noiraFlowConfig.subtitle}
       />
     </Grid>
   );
