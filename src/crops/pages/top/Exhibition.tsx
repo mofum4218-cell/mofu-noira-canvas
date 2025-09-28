@@ -12,6 +12,7 @@ import noiraPolyConfig from "@/config/pages/noira-poly.json";
 import noiraFlowConfig from "@/config/pages/noira-flow.json";
 import noiraStarsConfig from "@/config/pages/noira-stars.json";
 import noiraGridConfig from "@/config/pages/noira-grid.json";
+import noiraSystemConfig from "@/config/pages/noira-system.json";
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -73,6 +74,11 @@ export const Exhibition: React.FC = () => {
         id={noiraGridConfig.id}
         title={noiraGridConfig.title}
         subtitle={noiraGridConfig.subtitle}
+      />
+      <GalleryCard
+        id={noiraSystemConfig.id}
+        title={noiraSystemConfig.title}
+        subtitle={noiraSystemConfig.subtitle}
       />
     </Grid>
   );
