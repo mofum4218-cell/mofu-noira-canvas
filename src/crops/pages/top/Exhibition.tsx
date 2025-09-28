@@ -14,6 +14,7 @@ import noiraStarsConfig from "@/config/pages/noira-stars.json";
 import noiraGridConfig from "@/config/pages/noira-grid.json";
 import noiraSystemConfig from "@/config/pages/noira-system.json";
 import noiraAuroraConfig from "@/config/pages/noira-aurora.json";
+import noiraPhantomConfig from "@/config/pages/noira-phantom.json";
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -85,6 +86,11 @@ export const Exhibition: React.FC = () => {
         id={noiraAuroraConfig.id}
         title={noiraAuroraConfig.title}
         subtitle={noiraAuroraConfig.subtitle}
+      />
+      <GalleryCard
+        id={noiraPhantomConfig.id}
+        title={noiraPhantomConfig.title}
+        subtitle={noiraPhantomConfig.subtitle}
       />
     </Grid>
   );
