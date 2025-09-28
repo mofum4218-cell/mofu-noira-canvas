@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useTheme } from "@/greenhouse/themes/ThemeContext";
 import { getTheme } from "@/greenhouse/themes/colors";
 import { ThemeName } from "@/greenhouse/themes/types";
-import { supabase } from "@/lib/supabaseClient";
+import { getPublicUrl } from "@/lib/supabaseUtils";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -61,17 +61,7 @@ export const DescWrapper: React.FC<{
   const { currentTheme } = useTheme();
   const theme = getTheme(currentTheme as ThemeName);
 
-  const [logoUrl, setLogoUrl] = useState("");
-
-  useEffect(() => {
-    const fetchUrl = async () => {
-      const { data } = await supabase.storage
-        .from("noira-canvas")
-        .createSignedUrl("common/merge.svg", 300);
-      if (data?.signedUrl) setLogoUrl(data.signedUrl);
-    };
-    fetchUrl();
-  }, []);
+  const logoUrl = getPublicUrl("common/merge.svg");
 
   return (
     <Wrapper $bg={theme.bg} $text={theme.text}>
