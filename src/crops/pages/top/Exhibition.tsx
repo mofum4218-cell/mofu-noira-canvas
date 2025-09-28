@@ -5,6 +5,7 @@ import styled from "styled-components";
 import letterConfig from "@/config/pages/letter.json";
 import noiraRainbowConfig from "@/config/pages/noira-rainbow.json";
 import noiraBottleConfig from "@/config/pages/noira-bottle.json";
+import warpTunnelConfig from "@/config/pages/warp-tunnel.json";
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -31,6 +32,11 @@ export const Exhibition: React.FC = () => {
         id={noiraBottleConfig.id}
         title={noiraBottleConfig.title}
         subtitle={noiraBottleConfig.subtitle}
+      />
+      <GalleryCard
+        id={warpTunnelConfig.id}
+        title={warpTunnelConfig.title}
+        subtitle={warpTunnelConfig.subtitle}
       />
     </Grid>
   );
