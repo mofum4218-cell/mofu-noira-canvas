@@ -2,7 +2,8 @@
 
 import React from "react";
 import styled from "styled-components";
-import config from "@/config/pages/letter.json";
+import letterConfig from "@/config/pages/letter.json";
+import noiraRainbowConfig from "@/config/pages/noira-rainbow.json";
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -16,9 +17,14 @@ export const Exhibition: React.FC = () => {
   return (
     <Grid>
       <GalleryCard
-        id={config.id}
-        title={config.title}
-        subtitle={config.subtitle}
+        id={letterConfig.id}
+        title={letterConfig.title}
+        subtitle={letterConfig.subtitle}
+      />
+      <GalleryCard
+        id={noiraRainbowConfig.id}
+        title={noiraRainbowConfig.title}
+        subtitle={noiraRainbowConfig.subtitle}
       />
     </Grid>
   );
