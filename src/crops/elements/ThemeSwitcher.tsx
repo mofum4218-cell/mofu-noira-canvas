@@ -9,13 +9,16 @@ import Button from "@/crops/elements/Button";
 
 const SwitcherWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* ← 折り返し禁止 */
   gap: 0.5rem;
   margin-top: 2rem;
   justify-content: center;
+  overflow-x: auto; /* ← モバイルで横スクロール許可 */
+  -webkit-overflow-scrolling: touch; /* iOS スムーズスクロール */
 
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+    justify-content: flex-start; /* 左寄せ or centerに変えてもOK */
   }
 `;
 
@@ -29,7 +32,9 @@ export const ThemeSwitcher: React.FC = () => {
 
   const themeContext = useContext(ThemeContext);
   if (!themeContext) {
-    throw new Error("ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider.");
+    throw new Error(
+      "ThemeContext is undefined. Make sure you are inside a ThemeContext.Provider."
+    );
   }
 
   const { currentTheme, setTheme } = themeContext;

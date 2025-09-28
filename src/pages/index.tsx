@@ -1,15 +1,15 @@
-// pages/index.tsx
+// src/pages/index.tsx
 "use client";
 
 import React from "react";
 import Seo from "@/components/Seo";
-import SectionMapper from "@/crops/sections/SectionMapper";
+import TopPage from "./top";
 
 export default function Home() {
   return (
     <>
       <Seo />
-      <SectionMapper />
+      <TopPage />
     </>
   );
 }

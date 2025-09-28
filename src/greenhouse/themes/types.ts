@@ -1,1 +1,1 @@
-export type ThemeName = "forest" | "ocean" | "dark" | "neonViolet" | "burningRed" | "iceBlue";
+export type ThemeName = "noir" | "aura" | "solaris" | "cosmos" | "eden";

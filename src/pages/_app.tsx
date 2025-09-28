@@ -9,7 +9,6 @@ import { getTheme } from "@/greenhouse/themes/colors";
 import { ThemeName } from "@/greenhouse/themes/types";
 import { ThemeContext } from "@/greenhouse/themes/ThemeContext";
 import { log } from "@/utils/logger";
-import { Navbar } from "@/crops/elements/Navbar";
 import "@/styles/globals.css";
 import Footer from "@/crops/elements/Footer";
 
@@ -17,7 +16,7 @@ import Footer from "@/crops/elements/Footer";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [themeName, setThemeName] = useState<ThemeName>("forest");
+  const [themeName, setThemeName] = useState<ThemeName>("noir");
   const [mounted, setMounted] = useState(false);
   const [showLoading, setShowLoading] = useState(true); // ✅ ローディング制御
 
@@ -37,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
     // ✅ ローディング終了タイマー
     const loadingTimer = setTimeout(() => {
       setShowLoading(false);
-    }, 5500); // 5秒+αで自然にアニメ終わるの待つ
+    }, 8600); // 5秒+αで自然にアニメ終わるの待つ
 
     return () => clearTimeout(loadingTimer);
   }, []);
@@ -77,7 +76,6 @@ export default function App({ Component, pageProps }: AppProps) {
             minHeight: "100vh",
           }}
         >
-          <Navbar />
           <div style={{ flex: 1 }}>
             <Component {...pageProps} />
           </div>

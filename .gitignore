@@ -11,3 +11,5 @@ dist
 *.tsbuildinfo
 *.log
 .vercel
+
+.vercel
