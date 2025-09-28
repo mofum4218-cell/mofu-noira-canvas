@@ -6,6 +6,8 @@ import letterConfig from "@/config/pages/letter.json";
 import noiraRainbowConfig from "@/config/pages/noira-rainbow.json";
 import noiraBottleConfig from "@/config/pages/noira-bottle.json";
 import warpTunnelConfig from "@/config/pages/warp-tunnel.json";
+import noiraOrbitalConfig from "@/config/pages/noira-orbital.json";
+import luminousSphereConfig from "@/config/pages/luminous-sphere.json";
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -37,6 +39,16 @@ export const Exhibition: React.FC = () => {
         id={warpTunnelConfig.id}
         title={warpTunnelConfig.title}
         subtitle={warpTunnelConfig.subtitle}
+      />
+      <GalleryCard
+        id={noiraOrbitalConfig.id}
+        title={noiraOrbitalConfig.title}
+        subtitle={noiraOrbitalConfig.subtitle}
+      />
+      <GalleryCard
+        id={luminousSphereConfig.id}
+        title={luminousSphereConfig.title}
+        subtitle={luminousSphereConfig.subtitle}
       />
     </Grid>
   );
