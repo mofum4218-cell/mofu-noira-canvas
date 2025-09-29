@@ -17,7 +17,8 @@ import noiraAuroraConfig from "@/config/pages/noira-aurora.json";
 import noiraPhantomConfig from "@/config/pages/noira-phantom.json";
 import noiraShineConfig from "@/config/pages/noira-shine.json";
 import noiraSpectrumConfig from "@/config/pages/noira-spectrum.json";
-import noiraBubblesConfig from "@/config/pages/noira-bubbles.json"; // ← 追加！
+import noiraBubblesConfig from "@/config/pages/noira-bubbles.json";
+import noiraStormConfig from "@/config/pages/noira-storm.json"; // ← 追加！
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -30,86 +31,23 @@ const Grid = styled.div`
 export const Exhibition: React.FC = () => {
   return (
     <Grid>
-      <GalleryCard
-        id={letterConfig.id}
-        title={letterConfig.title}
-        subtitle={letterConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraRainbowConfig.id}
-        title={noiraRainbowConfig.title}
-        subtitle={noiraRainbowConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraBottleConfig.id}
-        title={noiraBottleConfig.title}
-        subtitle={noiraBottleConfig.subtitle}
-      />
-      <GalleryCard
-        id={warpTunnelConfig.id}
-        title={warpTunnelConfig.title}
-        subtitle={warpTunnelConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraOrbitalConfig.id}
-        title={noiraOrbitalConfig.title}
-        subtitle={noiraOrbitalConfig.subtitle}
-      />
-      <GalleryCard
-        id={luminousSphereConfig.id}
-        title={luminousSphereConfig.title}
-        subtitle={luminousSphereConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraPolyConfig.id}
-        title={noiraPolyConfig.title}
-        subtitle={noiraPolyConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraFlowConfig.id}
-        title={noiraFlowConfig.title}
-        subtitle={noiraFlowConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraStarsConfig.id}
-        title={noiraStarsConfig.title}
-        subtitle={noiraStarsConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraGridConfig.id}
-        title={noiraGridConfig.title}
-        subtitle={noiraGridConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraSystemConfig.id}
-        title={noiraSystemConfig.title}
-        subtitle={noiraSystemConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraAuroraConfig.id}
-        title={noiraAuroraConfig.title}
-        subtitle={noiraAuroraConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraPhantomConfig.id}
-        title={noiraPhantomConfig.title}
-        subtitle={noiraPhantomConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraShineConfig.id}
-        title={noiraShineConfig.title}
-        subtitle={noiraShineConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraSpectrumConfig.id}
-        title={noiraSpectrumConfig.title}
-        subtitle={noiraSpectrumConfig.subtitle}
-      />
-      <GalleryCard
-        id={noiraBubblesConfig.id} // ← 追加！
-        title={noiraBubblesConfig.title}
-        subtitle={noiraBubblesConfig.subtitle}
-      />
+      <GalleryCard id={letterConfig.id} title={letterConfig.title} subtitle={letterConfig.subtitle} />
+      <GalleryCard id={noiraRainbowConfig.id} title={noiraRainbowConfig.title} subtitle={noiraRainbowConfig.subtitle} />
+      <GalleryCard id={noiraBottleConfig.id} title={noiraBottleConfig.title} subtitle={noiraBottleConfig.subtitle} />
+      <GalleryCard id={warpTunnelConfig.id} title={warpTunnelConfig.title} subtitle={warpTunnelConfig.subtitle} />
+      <GalleryCard id={noiraOrbitalConfig.id} title={noiraOrbitalConfig.title} subtitle={noiraOrbitalConfig.subtitle} />
+      <GalleryCard id={luminousSphereConfig.id} title={luminousSphereConfig.title} subtitle={luminousSphereConfig.subtitle} />
+      <GalleryCard id={noiraPolyConfig.id} title={noiraPolyConfig.title} subtitle={noiraPolyConfig.subtitle} />
+      <GalleryCard id={noiraFlowConfig.id} title={noiraFlowConfig.title} subtitle={noiraFlowConfig.subtitle} />
+      <GalleryCard id={noiraStarsConfig.id} title={noiraStarsConfig.title} subtitle={noiraStarsConfig.subtitle} />
+      <GalleryCard id={noiraGridConfig.id} title={noiraGridConfig.title} subtitle={noiraGridConfig.subtitle} />
+      <GalleryCard id={noiraSystemConfig.id} title={noiraSystemConfig.title} subtitle={noiraSystemConfig.subtitle} />
+      <GalleryCard id={noiraAuroraConfig.id} title={noiraAuroraConfig.title} subtitle={noiraAuroraConfig.subtitle} />
+      <GalleryCard id={noiraPhantomConfig.id} title={noiraPhantomConfig.title} subtitle={noiraPhantomConfig.subtitle} />
+      <GalleryCard id={noiraShineConfig.id} title={noiraShineConfig.title} subtitle={noiraShineConfig.subtitle} />
+      <GalleryCard id={noiraSpectrumConfig.id} title={noiraSpectrumConfig.title} subtitle={noiraSpectrumConfig.subtitle} />
+      <GalleryCard id={noiraBubblesConfig.id} title={noiraBubblesConfig.title} subtitle={noiraBubblesConfig.subtitle} />
+      <GalleryCard id={noiraStormConfig.id} title={noiraStormConfig.title} subtitle={noiraStormConfig.subtitle} /> {/* ← 追加！ */}
     </Grid>
   );
 };
