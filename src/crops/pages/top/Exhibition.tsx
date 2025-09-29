@@ -18,7 +18,8 @@ import noiraPhantomConfig from "@/config/pages/noira-phantom.json";
 import noiraShineConfig from "@/config/pages/noira-shine.json";
 import noiraSpectrumConfig from "@/config/pages/noira-spectrum.json";
 import noiraBubblesConfig from "@/config/pages/noira-bubbles.json";
-import noiraStormConfig from "@/config/pages/noira-storm.json"; // ← 追加！
+import noiraStormConfig from "@/config/pages/noira-storm.json";
+import noiraMagazineConfig from "@/config/pages/noira-magazine.json"; // ← 追加！
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -47,7 +48,8 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraShineConfig.id} title={noiraShineConfig.title} subtitle={noiraShineConfig.subtitle} />
       <GalleryCard id={noiraSpectrumConfig.id} title={noiraSpectrumConfig.title} subtitle={noiraSpectrumConfig.subtitle} />
       <GalleryCard id={noiraBubblesConfig.id} title={noiraBubblesConfig.title} subtitle={noiraBubblesConfig.subtitle} />
-      <GalleryCard id={noiraStormConfig.id} title={noiraStormConfig.title} subtitle={noiraStormConfig.subtitle} /> {/* ← 追加！ */}
+      <GalleryCard id={noiraStormConfig.id} title={noiraStormConfig.title} subtitle={noiraStormConfig.subtitle} />
+      <GalleryCard id={noiraMagazineConfig.id} title={noiraMagazineConfig.title} subtitle={noiraMagazineConfig.subtitle} /> {/* ← 追加！ */}
     </Grid>
   );
 };
