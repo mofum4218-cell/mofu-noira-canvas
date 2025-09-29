@@ -15,6 +15,7 @@ import noiraGridConfig from "@/config/pages/noira-grid.json";
 import noiraSystemConfig from "@/config/pages/noira-system.json";
 import noiraAuroraConfig from "@/config/pages/noira-aurora.json";
 import noiraPhantomConfig from "@/config/pages/noira-phantom.json";
+import noiraShineConfig from "@/config/pages/noira-shine.json"; // ← 追加
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
 const Grid = styled.div`
@@ -91,6 +92,11 @@ export const Exhibition: React.FC = () => {
         id={noiraPhantomConfig.id}
         title={noiraPhantomConfig.title}
         subtitle={noiraPhantomConfig.subtitle}
+      />
+      <GalleryCard
+        id={noiraShineConfig.id} // ← 追加
+        title={noiraShineConfig.title}
+        subtitle={noiraShineConfig.subtitle}
       />
     </Grid>
   );
