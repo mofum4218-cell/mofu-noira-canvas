@@ -24,7 +24,8 @@ import noiraVisionConfig from "@/config/pages/noira-vision.json";
 import noiraProfileConfig from "@/config/pages/noira-profile.json";
 import noiraTypewriterConfig from "@/config/pages/noira-typewriter.json";
 import noiraLiquidConfig from "@/config/pages/noira-liquid.json";
-import noiraParticlesConfig from "@/config/pages/noira-particles.json"; // ← 追加！
+import noiraParticlesConfig from "@/config/pages/noira-particles.json";
+import noiraPossibleConfig from "@/config/pages/noira-possible.json"; // ← 追加！
 
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
@@ -60,7 +61,8 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraProfileConfig.id} title={noiraProfileConfig.title} subtitle={noiraProfileConfig.subtitle} />
       <GalleryCard id={noiraTypewriterConfig.id} title={noiraTypewriterConfig.title} subtitle={noiraTypewriterConfig.subtitle} />
       <GalleryCard id={noiraLiquidConfig.id} title={noiraLiquidConfig.title} subtitle={noiraLiquidConfig.subtitle} />
-      <GalleryCard id={noiraParticlesConfig.id} title={noiraParticlesConfig.title} subtitle={noiraParticlesConfig.subtitle} /> {/* ← 追加！ */}
+      <GalleryCard id={noiraParticlesConfig.id} title={noiraParticlesConfig.title} subtitle={noiraParticlesConfig.subtitle} />
+      <GalleryCard id={noiraPossibleConfig.id} title={noiraPossibleConfig.title} subtitle={noiraPossibleConfig.subtitle} /> {/* ← 追加！ */}
     </Grid>
   );
 };
