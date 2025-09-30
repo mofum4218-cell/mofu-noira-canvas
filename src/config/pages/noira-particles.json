@@ -1,0 +1,8 @@
+{
+  "id": "noira-particles",
+  "title": "Noira Particles",
+  "subtitle": "画像を粒子化した幻想的な表現",
+  "feature": "red.png と blue.png を横並びに配置し、粒子化してくるくる回転する幻想的なアニメーション。Three.js を用いた動的な表現。",
+  "arrange": "粒子サイズや密度、回転速度を調整することで、星空やオーロラのような演出にも応用可能。"
+}
+
