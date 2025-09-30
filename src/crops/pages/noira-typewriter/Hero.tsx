@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
     <Wrapper>
       <Left>
         <Typewriter>
-          Hi there, I'm Noira — weaving stories with light and code.
+          Hi there, I&apos;m Noira &mdash; weaving stories with light and code.
         </Typewriter>
       </Left>
       <Right $bg={imgUrl} />
