@@ -25,15 +25,16 @@ import noiraProfileConfig from "@/config/pages/noira-profile.json";
 import noiraTypewriterConfig from "@/config/pages/noira-typewriter.json";
 import noiraLiquidConfig from "@/config/pages/noira-liquid.json";
 import noiraParticlesConfig from "@/config/pages/noira-particles.json";
-import noiraPossibleConfig from "@/config/pages/noira-possible.json"; // ← 追加！
+import noiraPossibleConfig from "@/config/pages/noira-possible.json";
 import noiraCarouselConfig from "@/config/pages/noira-carousel.json";
-import noiraBookConfig from "@/config/pages/noira-book.json"; // ← 追加
-import noiraVoyageConfig from "@/config/pages/noira-voyage.json"; // ← 追加！
-import noiraPixelsConfig from "@/config/pages/noira-pixels.json"; // ← 追加！
-import noiraHoneycombConfig from "@/config/pages/noira-honeycomb.json"; // ← 追加
-import noiraFragmentsConfig from "@/config/pages/noira-fragments.json"; // ←追加
-import noiraTiltCardsConfig from "@/config/pages/noira-tilt-cards.json"; // ← 追加
-import noiraCinemaConfig from "@/config/pages/noira-cinema.json"; // ← 追加！
+import noiraSplitshowConfig from "@/config/pages/noira-splitshow.json";
+import noiraBookConfig from "@/config/pages/noira-book.json";          // ← 追加！
+import noiraVoyageConfig from "@/config/pages/noira-voyage.json";      // ← 追加！
+import noiraPixelsConfig from "@/config/pages/noira-pixels.json";      // ← 追加！
+import noiraHoneycombConfig from "@/config/pages/noira-honeycomb.json";// ← 追加！
+import noiraFragmentsConfig from "@/config/pages/noira-fragments.json";// ← 追加！
+import noiraTiltCardsConfig from "@/config/pages/noira-tilt-cards.json";// ← 追加！
+import noiraCinemaConfig from "@/config/pages/noira-cinema.json";      // ← 追加！
 
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
@@ -70,16 +71,16 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraTypewriterConfig.id} title={noiraTypewriterConfig.title} subtitle={noiraTypewriterConfig.subtitle} />
       <GalleryCard id={noiraLiquidConfig.id} title={noiraLiquidConfig.title} subtitle={noiraLiquidConfig.subtitle} />
       <GalleryCard id={noiraParticlesConfig.id} title={noiraParticlesConfig.title} subtitle={noiraParticlesConfig.subtitle} />
-      <GalleryCard id={noiraPossibleConfig.id} title={noiraPossibleConfig.title} subtitle={noiraPossibleConfig.subtitle} /> {/* ← 追加！ */}
-      <GalleryCard id={noiraCarouselConfig.id} title={noiraCarouselConfig.title} subtitle={noiraCarouselConfig.subtitle}/> {/* ← 追加 */}
-      <GalleryCard id={noiraBookConfig.id} title={noiraBookConfig.title} subtitle={noiraBookConfig.subtitle}/> {/* ← 追加 */}
-      <GalleryCard id={noiraVoyageConfig.id} title={noiraVoyageConfig.title} subtitle={noiraVoyageConfig.subtitle}/> {/* ← 追加！ */}
-      <GalleryCard id={noiraPixelsConfig.id} title={noiraPixelsConfig.title} subtitle={noiraPixelsConfig.subtitle}/> {/* ← 追加 */}
-      <GalleryCard id={noiraHoneycombConfig.id} title={noiraHoneycombConfig.title} subtitle={noiraHoneycombConfig.subtitle} />
-      <GalleryCard id={noiraFragmentsConfig.id} title={noiraFragmentsConfig.title} subtitle={noiraFragmentsConfig.subtitle}/> {/* ←追加！ */}
-      <GalleryCard id={noiraTiltCardsConfig.id} title={noiraTiltCardsConfig.title} subtitle={noiraTiltCardsConfig.subtitle}/> {/* ←追加！ */}
-      <GalleryCard id={noiraCinemaConfig.id} title={noiraCinemaConfig.title} subtitle={noiraCinemaConfig.subtitle} /> {/* ← 追加！ */}
-
+      <GalleryCard id={noiraPossibleConfig.id} title={noiraPossibleConfig.title} subtitle={noiraPossibleConfig.subtitle} />
+      <GalleryCard id={noiraCarouselConfig.id} title={noiraCarouselConfig.title} subtitle={noiraCarouselConfig.subtitle}/>
+      <GalleryCard id={noiraSplitshowConfig.id} title={noiraSplitshowConfig.title} subtitle={noiraSplitshowConfig.subtitle}/>
+      <GalleryCard id={noiraBookConfig.id} title={noiraBookConfig.title} subtitle={noiraBookConfig.subtitle}/>           {/* ← 追加 */}
+      <GalleryCard id={noiraVoyageConfig.id} title={noiraVoyageConfig.title} subtitle={noiraVoyageConfig.subtitle}/>     {/* ← 追加 */}
+      <GalleryCard id={noiraPixelsConfig.id} title={noiraPixelsConfig.title} subtitle={noiraPixelsConfig.subtitle}/>     {/* ← 追加 */}
+      <GalleryCard id={noiraHoneycombConfig.id} title={noiraHoneycombConfig.title} subtitle={noiraHoneycombConfig.subtitle}/> {/* ← 追加 */}
+      <GalleryCard id={noiraFragmentsConfig.id} title={noiraFragmentsConfig.title} subtitle={noiraFragmentsConfig.subtitle}/> {/* ← 追加 */}
+      <GalleryCard id={noiraTiltCardsConfig.id} title={noiraTiltCardsConfig.title} subtitle={noiraTiltCardsConfig.subtitle}/> {/* ← 追加 */}
+      <GalleryCard id={noiraCinemaConfig.id} title={noiraCinemaConfig.title} subtitle={noiraCinemaConfig.subtitle}/>     {/* ← 追加 */}
     </Grid>
   );
 };
