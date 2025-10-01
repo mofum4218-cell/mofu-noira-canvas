@@ -33,6 +33,7 @@ import noiraPixelsConfig from "@/config/pages/noira-pixels.json"; // ← 追加�
 import noiraHoneycombConfig from "@/config/pages/noira-honeycomb.json"; // ← 追加
 import noiraFragmentsConfig from "@/config/pages/noira-fragments.json"; // ←追加
 import noiraTiltCardsConfig from "@/config/pages/noira-tilt-cards.json"; // ← 追加
+import noiraCinemaConfig from "@/config/pages/noira-cinema.json"; // ← 追加！
 
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
@@ -77,6 +78,7 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraHoneycombConfig.id} title={noiraHoneycombConfig.title} subtitle={noiraHoneycombConfig.subtitle} />
       <GalleryCard id={noiraFragmentsConfig.id} title={noiraFragmentsConfig.title} subtitle={noiraFragmentsConfig.subtitle}/> {/* ←追加！ */}
       <GalleryCard id={noiraTiltCardsConfig.id} title={noiraTiltCardsConfig.title} subtitle={noiraTiltCardsConfig.subtitle}/> {/* ←追加！ */}
+      <GalleryCard id={noiraCinemaConfig.id} title={noiraCinemaConfig.title} subtitle={noiraCinemaConfig.subtitle} /> {/* ← 追加！ */}
 
     </Grid>
   );
