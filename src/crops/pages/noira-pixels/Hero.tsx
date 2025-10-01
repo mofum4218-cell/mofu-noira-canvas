@@ -81,17 +81,16 @@ export const Hero: React.FC = () => {
             this.size = Math.random() * 2 + 0.5;
           }
 
-          update() {
-            this.speed = grid[Math.floor(this.y / detail)][Math.floor(this.x / detail)];
-            let movement = (2.5 - this.speed) + this.velocity;
-            this.y += movement;
-            if (this.y >= canvas.height) {
-              this.y = 0;
-              this.x = Math.random() * canvas.width;
-            }
-          }
-
-          draw() {
+        update() {
+  this.speed = grid[Math.floor(this.y / detail)][Math.floor(this.x / detail)];
+  const movement = (2.5 - this.speed) + this.velocity; // ← let → const
+  this.y += movement;
+  if (this.y >= canvas.height) {
+    this.y = 0;
+    this.x = Math.random() * canvas.width;
+  }
+}
+  draw() {
             ctx.beginPath();
             ctx.fillStyle = "white"; // 白粒子
             ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
