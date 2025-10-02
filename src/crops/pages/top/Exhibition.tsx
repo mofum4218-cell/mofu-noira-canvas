@@ -38,6 +38,7 @@ import noiraCinemaConfig from "@/config/pages/noira-cinema.json";      // ← �
 import noiraStepSliderConfig from "@/config/pages/noira-step-slider.json"; // ← 追加！
 import noiraPortfolioConfig from "@/config/pages/noira-portfolio.json"; // ← 追加！
 import noiraStarburstConfig from "@/config/pages/noira-starburst.json";
+import noiraFlashlightConfig from "@/config/pages/noira-flashlight.json";
 
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
@@ -87,6 +88,8 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraStepSliderConfig.id} title={noiraStepSliderConfig.title} subtitle={noiraStepSliderConfig.subtitle}/> {/* ← 追加！ */}
       <GalleryCard id={noiraPortfolioConfig.id} title={noiraPortfolioConfig.title} subtitle={noiraPortfolioConfig.subtitle}/>
       <GalleryCard id={noiraStarburstConfig.id} title={noiraStarburstConfig.title} subtitle={noiraStarburstConfig.subtitle}/>
+      <GalleryCard id={noiraFlashlightConfig.id} title={noiraFlashlightConfig.title} subtitle={noiraFlashlightConfig.subtitle}/>
+
 
 
     </Grid>
