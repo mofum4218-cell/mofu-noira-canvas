@@ -40,6 +40,7 @@ import noiraPortfolioConfig from "@/config/pages/noira-portfolio.json"; // â† è
 import noiraStarburstConfig from "@/config/pages/noira-starburst.json";
 import noiraFlashlightConfig from "@/config/pages/noira-flashlight.json";
 import noiraShowcaseConfig from "@/config/pages/noira-showcase.json";
+import radianceConfig from "@/config/pages/noira-radiance.json";
 
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
@@ -91,7 +92,7 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraStarburstConfig.id} title={noiraStarburstConfig.title} subtitle={noiraStarburstConfig.subtitle}/>
       <GalleryCard id={noiraFlashlightConfig.id} title={noiraFlashlightConfig.title} subtitle={noiraFlashlightConfig.subtitle}/>
       <GalleryCard id={noiraShowcaseConfig.id} title={noiraShowcaseConfig.title} subtitle={noiraShowcaseConfig.subtitle}/>
-
+      <GalleryCard id={radianceConfig.id} title={radianceConfig.title} subtitle={radianceConfig.subtitle}/>
 
 
 
