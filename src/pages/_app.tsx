@@ -12,13 +12,15 @@ import { log } from "@/utils/logger";
 import "@/styles/globals.css";
 import Footer from "@/crops/elements/Footer";
 
-// ✅ 追加
-import LoadingScreen from "@/components/ui/LoadingScreen";
+// ✅ コメントアウト：LoadingScreenのインポート
+// import LoadingScreen from "@/components/ui/LoadingScreen";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [themeName, setThemeName] = useState<ThemeName>("noir");
   const [mounted, setMounted] = useState(false);
-  const [showLoading, setShowLoading] = useState(true); // ✅ ローディング制御
+
+  // ✅ コメントアウト：ローディング用state
+  // const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
     try {
@@ -33,12 +35,11 @@ export default function App({ Component, pageProps }: AppProps) {
       setMounted(true);
     }
 
-    // ✅ ローディング終了タイマー
-    const loadingTimer = setTimeout(() => {
-      setShowLoading(false);
-    }, 8600); // 5秒+αで自然にアニメ終わるの待つ
-
-    return () => clearTimeout(loadingTimer);
+    // ✅ コメントアウト：ローディングタイマー
+    // const loadingTimer = setTimeout(() => {
+    //   setShowLoading(false);
+    // }, 8600);
+    // return () => clearTimeout(loadingTimer);
   }, []);
 
   const theme = useMemo(() => {
@@ -68,10 +69,13 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider key={themeName} theme={theme}>
       <ThemeContext.Provider value={contextValue}>
         <GlobalThemeStyle />
-        {showLoading && <LoadingScreen />} {/* ✅ ローディング画面 */}
+        {/* ✅ コメントアウト：ローディング画面 */}
+        {/* {showLoading && <LoadingScreen />} */}
+
+        {/* ✅ showLoading制御削除・常時表示 */}
         <div
           style={{
-            display: showLoading ? "none" : "flex",
+            display: "flex",
             flexDirection: "column",
             minHeight: "100vh",
           }}
