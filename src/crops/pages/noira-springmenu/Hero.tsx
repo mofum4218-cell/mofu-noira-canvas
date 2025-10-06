@@ -130,7 +130,7 @@ export const Hero: React.FC = () => {
     });
 
     // トグルボタン
-    const button = menu.querySelector("footer button");
+    const button = menu.querySelector("footer button") as HTMLButtonElement | null;
     if (!button) return;
 
     const handleClick = (e: Event) => {
@@ -142,14 +142,8 @@ export const Hero: React.FC = () => {
           "--top",
           rect.top + group * -15 - 20 + "px"
         );
-        (el as HTMLElement).style.setProperty(
-          "--delay-in",
-          j * 0.1 + "s"
-        );
-        (el as HTMLElement).style.setProperty(
-          "--delay-out",
-          (count - j) * 0.1 + "s"
-        );
+        (el as HTMLElement).style.setProperty("--delay-in", j * 0.1 + "s");
+        (el as HTMLElement).style.setProperty("--delay-out", (count - j) * 0.1 + "s");
       });
       menu.classList.toggle("closed");
       e.stopPropagation();
@@ -157,11 +151,11 @@ export const Hero: React.FC = () => {
 
     button.addEventListener("click", handleClick);
 
-    // 初回デモ用
+    // 初回デモ用（TypeScript対応版）
     setTimeout(() => {
-      button.click();
+      (button as HTMLButtonElement).click();
       setTimeout(() => {
-        button.click();
+        (button as HTMLButtonElement).click();
       }, count * 100 + 500);
     }, 1000);
 
