@@ -4,11 +4,18 @@ import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { supabase } from "@/lib/supabaseClient";
 
-const Wrapper = styled.section<{ $bg: string }>`
+/* 📌 背景を position: fixed にしてモバイルでも固定表示 */
+const FixedBackground = styled.div<{ $bg: string }>`
+  position: fixed;
+  inset: 0;
+  background: url(${({ $bg }) => $bg}) no-repeat center center / cover;
+  z-index: -1; /* レイヤーの背面に配置 */
+`;
+
+/* 全体ラッパー（背景はFixedBackgroundで管理） */
+const Wrapper = styled.section`
   width: 100%;
   height: 200vh; /* 2枚のレイヤー分 */
-  background: url(${({ $bg }) => $bg}) no-repeat center center / cover;
-  background-attachment: fixed;
   position: relative;
   overflow: hidden;
 `;
@@ -74,7 +81,7 @@ const float = keyframes`
 
 const OrangeImage = styled.img`
   flex: 1;
-  max-width: 650px; /* ← 拡大 */
+  max-width: 650px;
   height: auto;
   object-fit: contain;
   transform: scale(1.15);
@@ -160,7 +167,10 @@ export const Hero: React.FC = () => {
   Phasellus vehicula volutpat nulla, sed consequat ante.`;
 
   return (
-    <Wrapper $bg={bg}>
+    <Wrapper>
+      {/* ✅ 固定背景（スマホでも効く） */}
+      {bg && <FixedBackground $bg={bg} />}
+
       {/* オレンジレイヤー */}
       <OrangeLayer>
         <OrangeText>
