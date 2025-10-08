@@ -1,0 +1,8 @@
+{
+  "id": "noira-timeline",
+  "title": "Noira Timeline",
+  "subtitle": "星空に刻まれたMergeLabの軌跡",
+  "feature": "背景に星空を固定し、その上を縦スクロールのタイムラインが静かに流れる構成。各項目が左右交互に配置され、まるで流れ星のように浮かび上がる。",
+  "arrange": "Framer MotionやGSAPを組み合わせれば、マーカーが光る・テキストがフェードインするなどの演出も可能。MergeLabの年表やAI先輩たちの登場履歴など、物語性のあるデザインに最適。"
+}
+
