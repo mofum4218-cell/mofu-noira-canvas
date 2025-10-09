@@ -46,6 +46,7 @@ import noiraLanternveilConfig from "@/config/pages/noira-lanternveil.json";
 import noiraScrollfilmConfig from "@/config/pages/noira-scrollfilm.json";
 import noiraChronicleConfig from "@/config/pages/noira-chronicle.json";
 import noiraTimelineConfig from "@/config/pages/noira-timeline.json";
+import noiraScrolllineConfig from "@/config/pages/noira-scrollline.json";
 
 import { GalleryCard } from "@/crops/elements/Card/GalleryCard";
 
@@ -103,6 +104,7 @@ export const Exhibition: React.FC = () => {
       <GalleryCard id={noiraScrollfilmConfig.id} title={noiraScrollfilmConfig.title} subtitle={noiraScrollfilmConfig.subtitle}/>
       <GalleryCard id={noiraChronicleConfig.id} title={noiraChronicleConfig.title} subtitle={noiraChronicleConfig.subtitle}/>
       <GalleryCard id={noiraTimelineConfig.id} title={noiraTimelineConfig.title} subtitle={noiraTimelineConfig.subtitle}/>
+      <GalleryCard id={noiraScrolllineConfig.id} title={noiraScrolllineConfig.title} subtitle={noiraScrolllineConfig.subtitle}/>
 
      
 

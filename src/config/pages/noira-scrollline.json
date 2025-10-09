@@ -1,0 +1,8 @@
+{
+  "id": "noira-scrollline",
+  "title": "Noira Scrollline",
+  "subtitle": "背景が変わるMergeLabヒストリーライン",
+  "feature": "スクロールに合わせて背景画像が切り替わる軽量タイムライン。Intersection Observerを活用し、ユーザーが進むごとに物語が進行していくような演出を実現。",
+  "arrange": "背景を星空・抽象アート・人物などに変えることで、歴史・ストーリー・制作過程の可視化に応用可能。MergeLabの世界観や進化の軌跡を表現する用途にも最適。"
+}
+
