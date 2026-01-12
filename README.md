@@ -6,7 +6,7 @@ Supabase keys / private configs are removed — only the **visible front-end lay
 📍 Live Demo (Experimental)
 https://noira-canvas.vercel.app/
 
-🧭 Concept
+🧭 Concept🔐
 
 > 「日記がコードに変わり、コードが現実を変える場所」
 > 
@@ -19,3 +19,6 @@ This repository is part of that translation layer.
 
 - PrismSet Nexus — Base UI ecosystem
 - Noira Canvas — UI Component Farm (public demo)
+
+notion link
+https://spiffy-revolve-382.notion.site/PORTAL-001-MergeLab-28bf9f7036a180b4aa7debd76a18be40?source=copy_link
